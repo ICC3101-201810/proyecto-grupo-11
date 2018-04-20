@@ -12,13 +12,15 @@ namespace BiblioApp
         string FechaCreacion;
         int Calificacion;
         List<string> Comentario;
+        string CarreraAsociada;
 
-        public MaterialEducativo(string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario)
+        public MaterialEducativo(string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarreraAsociada)
         {
             Autor = MiAutor;
             FechaCreacion = MiFechaCreacion;
             Calificacion = MiCalificacion;
             Comentario = new List<string>(MiComentario);
+            CarreraAsociada = MiCarreraAsociada;
         }
 
 
