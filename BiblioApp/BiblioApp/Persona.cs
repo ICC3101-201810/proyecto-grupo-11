@@ -22,5 +22,14 @@ namespace BiblioApp
             Usuario = miUsuario;
             Password = miPassword;
         }
+
+        public string GetUsername()
+        {
+            return Usuario;
+        }
+        public string GetPassword()
+        {
+            return Password;
+        }
     }
 }
