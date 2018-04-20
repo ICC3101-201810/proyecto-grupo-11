@@ -20,7 +20,32 @@ namespace BiblioApp
 
         public string MostrarUbicacion()
         {
+            string resultado = "";
 
+            foreach (Ubicacion a in GetUbicacion())
+            {
+                if (GetUbicacion()[0] == a)
+                {
+                    resultado += "Sector: " + a + "\n";
+                }
+
+                else if (GetUbicacion()[1] == a)
+                {
+                    resultado += "Piso: " + a + "\n";
+                }
+
+                if (GetUbicacion()[2] == a)
+                {
+                    resultado += "Librero: " + a + "\n";
+                }
+
+                if (GetUbicacion()[3] == a)
+                {
+                    resultado += "Estante: " + a + "\n";
+                }
+            }
+            
+            return resultado;
         }
 
     }
