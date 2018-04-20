@@ -18,5 +18,10 @@ namespace BiblioApp
             Copia = MiCopia;
         }
 
+        public string MostrarUbicacion()
+        {
+
+        }
+
     }
 }

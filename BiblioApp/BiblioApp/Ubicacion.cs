@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BiblioApp
 {
-    class Ubicacion
+    public class Ubicacion
     {
         string Sector;
         int Piso;

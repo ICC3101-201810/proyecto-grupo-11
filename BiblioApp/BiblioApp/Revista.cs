@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BiblioApp
 {
-    class Revista : MaterialEducativo
+    public class Revista : MaterialEducativo, IUbicable
     {
         string Copia;
 
-        public Revista(string MiCopia, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarreraAsociada)
-            : base(MiAutor, MiFechaCreacion, MiCalificacion, MiComentario, MiCarreraAsociada)
+        public Revista(string MiCopia, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarreraAsociada, Ubicacion[] MiUbicacion)
+            : base(MiAutor, MiFechaCreacion, MiCalificacion, MiComentario, MiCarreraAsociada, MiUbicacion)
         {
             Copia = MiCopia;
         }

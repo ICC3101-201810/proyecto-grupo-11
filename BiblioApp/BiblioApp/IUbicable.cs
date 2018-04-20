@@ -8,5 +8,6 @@ namespace BiblioApp
 {
     interface IUbicable
     {
+
     }
 }
