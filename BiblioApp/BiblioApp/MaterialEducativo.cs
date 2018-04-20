@@ -35,5 +35,17 @@ namespace BiblioApp
             return Autor;
         }
 
+        public string MostrarComentarios()
+        {
+            string resultado = "";
+
+            foreach(string a in Comentario)
+            {
+                resultado += a + "\n\n";
+            }
+
+            return resultado;
+        }
+
     }
 }

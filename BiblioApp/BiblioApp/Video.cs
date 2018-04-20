@@ -15,5 +15,35 @@ namespace BiblioApp
         {
             Stock = MiStock;
         }
+
+        public string MostrarUbicacion()
+        {
+            string resultado = "";
+
+            foreach (Ubicacion a in GetUbicacion())
+            {
+                if (GetUbicacion()[0] == a)
+                {
+                    resultado += "Sector: " + a + "\n";
+                }
+
+                else if (GetUbicacion()[1] == a)
+                {
+                    resultado += "Piso: " + a + "\n";
+                }
+
+                else if (GetUbicacion()[2] == a)
+                {
+                    resultado += "Librero: " + a + "\n";
+                }
+
+                else if (GetUbicacion()[3] == a)
+                {
+                    resultado += "Estante: " + a + "\n";
+                }
+            }
+
+            return resultado;
+        }
     }
 }
