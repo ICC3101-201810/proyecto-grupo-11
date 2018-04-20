@@ -10,7 +10,9 @@ namespace BiblioApp
     {
         static void Main(string[] args)
         {
-
+            List<Persona> usuarios = new List<Persona>();
+            VERDE("Biblio app\n");
+            
         }
 
         static void ROJO(string mensaje)
@@ -42,6 +44,11 @@ namespace BiblioApp
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write(mensaje);
             Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        static bool login(string nombre_usuario, string password)
+        {
+            return true;
         }
     }
 }
