@@ -31,17 +31,17 @@ namespace BiblioApp
 
                 else if (GetUbicacion()[1] == a)
                 {
-                    resultado += "Piso: " + a + "\n";
+                    resultado += "Piso: " + a.ToString() + "\n";
                 }
 
-                if (GetUbicacion()[2] == a)
+                else if (GetUbicacion()[2] == a)
                 {
-                    resultado += "Librero: " + a + "\n";
+                    resultado += "Librero: " + a.ToString() + "\n";
                 }
 
-                if (GetUbicacion()[3] == a)
+                else if (GetUbicacion()[3] == a)
                 {
-                    resultado += "Estante: " + a + "\n";
+                    resultado += "Estante: " + a.ToString() + "\n";
                 }
             }
             
