@@ -13,5 +13,13 @@ namespace BiblioApp
         {
 
         }
+
+        public void ModificarStock()
+        {
+            int nuevoStock;
+            Console.WriteLine("");
+            nuevoStock = Int32.Parse(Console.ReadLine());
+            
+        }
     }
 }
