@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BiblioApp
 {
-    public class Video : MaterialEducativo, IUbicable
+    public class Video : MaterialEducativo
     {
         int Stock;
 
@@ -44,6 +44,18 @@ namespace BiblioApp
             }
 
             return resultado;
+        }
+
+        public int Stocks
+        {
+            get
+            {
+                return Stock;
+            }
+            set
+            {
+                Stock = value;
+            }
         }
     }
 }

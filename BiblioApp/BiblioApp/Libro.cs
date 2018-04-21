@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BiblioApp
 {
-    public class Libro : MaterialEducativo, IUbicable
+    public class Libro : MaterialEducativo
     {
         string Tomo;
-        int Copia;
+        public int Copia { get; set; }
 
         public Libro(string MiCarreraAsociada, string MiTomo, int MiCopia, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, Ubicacion[] MiUbicacion)
             : base(MiAutor, MiFechaCreacion, MiCalificacion, MiComentario, MiCarreraAsociada, MiUbicacion)
@@ -46,6 +46,18 @@ namespace BiblioApp
             }
             
             return resultado;
+        }
+
+        public int Copias
+        {
+            get
+            {
+                return Copia;
+            }
+            set
+            {
+                Copia = value;
+            }
         }
 
     }
