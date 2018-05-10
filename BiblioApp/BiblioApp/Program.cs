@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace BiblioApp
 {
     class Program
     {
+        public static List<Persona> usuarios;
+        public static List<Persona> alumnos;
+        public static List<Persona> profesores;
+        public static List<Persona> administradores;
+
         static void Main(string[] args)
         {
-            List<Persona> usuarios = new List<Persona>();
-            List<Persona> alumnos = new List<Persona>();
-            List<Persona> profesores = new List<Persona>();
-            List<Persona> administradores = new List<Persona>();
+            usuarios = new List<Persona>();
+            alumnos = new List<Persona>();
+            profesores = new List<Persona>();
+            administradores = new List<Persona>();
 
             string eleccion;
             
@@ -21,14 +27,22 @@ namespace BiblioApp
             bool correr_programa = true;
             while (correr_programa)
             {
-                ESCRIBIR_CONSOLA("1. Iniciar secion.\n2. Nuevo usuario.\n3. Salir.\nSeleccione: ");
+                ESCRIBIR_CONSOLA("1. Iniciar sesion.\n2. Nuevo usuario.\n3. Salir.\nSeleccione: ");
                 eleccion = LEER_CONSOLA();
+                while(Int32.Parse(eleccion) < 1 || Int32.Parse(eleccion) > 3)
+                {
+                    Console.Clear();
+                    ROJO("Seleccione una opcion correcta\n");
+                    ESCRIBIR_CONSOLA("1. Iniciar sesion.\n2. Nuevo usuario.\n3. Salir.\nSeleccione: ");
+                    eleccion = LEER_CONSOLA();
+                }
                 if (eleccion == "1")
                 {
                     bool inicio_sesion = LogIn(usuarios);
                     if (inicio_sesion == true)
                     {
                         VERDE("LogIn exitoso.\n");
+                        Console.Clear();
                     }
 
                 }//iniciar sesion
