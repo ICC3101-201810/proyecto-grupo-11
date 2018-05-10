@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
 {
-    class Revista : MaterialEducativo
+    public class Revista : MaterialEducativo
     {
         int Copia;
 

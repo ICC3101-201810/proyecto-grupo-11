@@ -1,0 +1,9 @@
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.csprojResolveAssemblyReference.cache
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.Properties.Resources.resources
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.csproj.GenerateResource.cache
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.csproj.CoreCompileInputs.cache
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\bin\Debug\Biblio_app_windows_form.exe.config
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\bin\Debug\Biblio_app_windows_form.exe
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\bin\Debug\Biblio_app_windows_form.pdb
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.exe
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.pdb

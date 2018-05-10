@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
 {
-    class Video : MaterialEducativo
+    public class Video : MaterialEducativo
     {
         int Stock;
 
