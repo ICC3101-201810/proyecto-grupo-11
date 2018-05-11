@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Biblio_app_windows_form
 {
-    public partial class Form1 : Form
+    public partial class vista_alumno : Form
     {
-        public Form1()
+        public vista_alumno()
         {
             InitializeComponent();
         }

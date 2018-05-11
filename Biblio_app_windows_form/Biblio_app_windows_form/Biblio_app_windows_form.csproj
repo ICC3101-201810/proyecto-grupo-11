@@ -47,11 +47,11 @@
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="Arriendo.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="inicio_sesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="inicio_sesion.Designer.cs">
+      <DependentUpon>inicio_sesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Libro.cs" />
     <Compile Include="MaterialEducativo.cs" />
@@ -62,8 +62,14 @@
     <Compile Include="Revista.cs" />
     <Compile Include="Ubicacion.cs" />
     <Compile Include="Video.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="vista_administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista_administrador.Designer.cs">
+      <DependentUpon>vista_administrador.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="inicio_sesion.resx">
+      <DependentUpon>inicio_sesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vista_administrador.resx">
+      <DependentUpon>vista_administrador.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

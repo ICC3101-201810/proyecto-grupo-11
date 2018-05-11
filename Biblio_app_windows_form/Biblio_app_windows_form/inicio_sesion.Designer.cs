@@ -1,6 +1,6 @@
 ﻿namespace Biblio_app_windows_form
 {
-    partial class Form1
+    partial class inicio_sesion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.inicio_sesion_btn = new System.Windows.Forms.Button();
+            this.username_txtbox = new System.Windows.Forms.TextBox();
+            this.salir_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.password_txtbox = new System.Windows.Forms.TextBox();
+            this.iniciar_sesion_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // username_txtbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
-            this.textBox1.TabIndex = 0;
+            this.username_txtbox.Location = new System.Drawing.Point(100, 12);
+            this.username_txtbox.Name = "username_txtbox";
+            this.username_txtbox.Size = new System.Drawing.Size(247, 20);
+            this.username_txtbox.TabIndex = 0;
             // 
-            // inicio_sesion_btn
+            // salir_btn
             // 
-            this.inicio_sesion_btn.Location = new System.Drawing.Point(100, 64);
-            this.inicio_sesion_btn.Name = "inicio_sesion_btn";
-            this.inicio_sesion_btn.Size = new System.Drawing.Size(247, 23);
-            this.inicio_sesion_btn.TabIndex = 1;
-            this.inicio_sesion_btn.Text = "Iniciar sesion";
-            this.inicio_sesion_btn.UseVisualStyleBackColor = true;
+            this.salir_btn.Location = new System.Drawing.Point(226, 64);
+            this.salir_btn.Name = "salir_btn";
+            this.salir_btn.Size = new System.Drawing.Size(117, 23);
+            this.salir_btn.TabIndex = 1;
+            this.salir_btn.Text = "Salir";
+            this.salir_btn.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -69,26 +70,39 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
-            // textBox2
+            // password_txtbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 20);
-            this.textBox2.TabIndex = 4;
+            this.password_txtbox.Location = new System.Drawing.Point(100, 38);
+            this.password_txtbox.Name = "password_txtbox";
+            this.password_txtbox.PasswordChar = '*';
+            this.password_txtbox.Size = new System.Drawing.Size(247, 20);
+            this.password_txtbox.TabIndex = 4;
             // 
-            // Form1
+            // iniciar_sesion_btn
+            // 
+            this.iniciar_sesion_btn.Location = new System.Drawing.Point(100, 65);
+            this.iniciar_sesion_btn.Name = "iniciar_sesion_btn";
+            this.iniciar_sesion_btn.Size = new System.Drawing.Size(117, 23);
+            this.iniciar_sesion_btn.TabIndex = 5;
+            this.iniciar_sesion_btn.Text = "Iniciar sesion";
+            this.iniciar_sesion_btn.UseVisualStyleBackColor = true;
+            this.iniciar_sesion_btn.Click += new System.EventHandler(this.iniciar_sesion_btn_Click);
+            // 
+            // inicio_sesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 100);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.iniciar_sesion_btn);
+            this.Controls.Add(this.password_txtbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.inicio_sesion_btn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.salir_btn);
+            this.Controls.Add(this.username_txtbox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "inicio_sesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio Sesion";
             this.ResumeLayout(false);
@@ -98,11 +112,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button inicio_sesion_btn;
+        private System.Windows.Forms.TextBox username_txtbox;
+        private System.Windows.Forms.Button salir_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox password_txtbox;
+        private System.Windows.Forms.Button iniciar_sesion_btn;
     }
 }
 
