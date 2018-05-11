@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Administrador.cs" />
     <Compile Include="Alumno.cs" />
+    <Compile Include="ArrendarLibroEventArgs.cs" />
     <Compile Include="Arriendo.cs" />
     <Compile Include="inicio_sesion.cs">
       <SubType>Form</SubType>
