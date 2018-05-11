@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.arrendar_libro_btn = new System.Windows.Forms.Button();
+            this.agregar_libro_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,20 +37,23 @@
             this.autor_txtbox = new System.Windows.Forms.TextBox();
             this.codigo_txtbox = new System.Windows.Forms.TextBox();
             this.fecha_dev_txtbox = new System.Windows.Forms.TextBox();
-            this.ingresar_codigo_btn = new System.Windows.Forms.Button();
+            this.agreagar_usuario_btn = new System.Windows.Forms.Button();
             this.cerrar_sesion_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.new_password_txtbox = new System.Windows.Forms.TextBox();
+            this.new_username_txtbox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // arrendar_libro_btn
+            // agregar_libro_btn
             // 
-            this.arrendar_libro_btn.Enabled = false;
-            this.arrendar_libro_btn.Location = new System.Drawing.Point(191, 125);
-            this.arrendar_libro_btn.Name = "arrendar_libro_btn";
-            this.arrendar_libro_btn.Size = new System.Drawing.Size(75, 48);
-            this.arrendar_libro_btn.TabIndex = 0;
-            this.arrendar_libro_btn.Text = "Arrendar Libro";
-            this.arrendar_libro_btn.UseVisualStyleBackColor = true;
+            this.agregar_libro_btn.Location = new System.Drawing.Point(191, 125);
+            this.agregar_libro_btn.Name = "agregar_libro_btn";
+            this.agregar_libro_btn.Size = new System.Drawing.Size(75, 48);
+            this.agregar_libro_btn.TabIndex = 0;
+            this.agregar_libro_btn.Text = "Agregar Libro";
+            this.agregar_libro_btn.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -116,19 +119,17 @@
             this.fecha_dev_txtbox.Size = new System.Drawing.Size(237, 20);
             this.fecha_dev_txtbox.TabIndex = 8;
             // 
-            // ingresar_codigo_btn
+            // agreagar_usuario_btn
             // 
-            this.ingresar_codigo_btn.Enabled = false;
-            this.ingresar_codigo_btn.Location = new System.Drawing.Point(288, 125);
-            this.ingresar_codigo_btn.Name = "ingresar_codigo_btn";
-            this.ingresar_codigo_btn.Size = new System.Drawing.Size(75, 48);
-            this.ingresar_codigo_btn.TabIndex = 9;
-            this.ingresar_codigo_btn.Text = "Ingresar código";
-            this.ingresar_codigo_btn.UseVisualStyleBackColor = true;
+            this.agreagar_usuario_btn.Location = new System.Drawing.Point(670, 125);
+            this.agreagar_usuario_btn.Name = "agreagar_usuario_btn";
+            this.agreagar_usuario_btn.Size = new System.Drawing.Size(75, 48);
+            this.agreagar_usuario_btn.TabIndex = 9;
+            this.agreagar_usuario_btn.Text = "Crear un nuevo usuario";
+            this.agreagar_usuario_btn.UseVisualStyleBackColor = true;
             // 
             // cerrar_sesion_btn
             // 
-            this.cerrar_sesion_btn.Enabled = false;
             this.cerrar_sesion_btn.Location = new System.Drawing.Point(23, 125);
             this.cerrar_sesion_btn.Name = "cerrar_sesion_btn";
             this.cerrar_sesion_btn.Size = new System.Drawing.Size(119, 23);
@@ -146,14 +147,50 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // new_password_txtbox
+            // 
+            this.new_password_txtbox.Location = new System.Drawing.Point(508, 41);
+            this.new_password_txtbox.Name = "new_password_txtbox";
+            this.new_password_txtbox.Size = new System.Drawing.Size(237, 20);
+            this.new_password_txtbox.TabIndex = 15;
+            // 
+            // new_username_txtbox
+            // 
+            this.new_username_txtbox.Location = new System.Drawing.Point(508, 15);
+            this.new_username_txtbox.Name = "new_username_txtbox";
+            this.new_username_txtbox.Size = new System.Drawing.Size(237, 20);
+            this.new_username_txtbox.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(411, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Password";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(411, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Username";
+            // 
             // vista_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 185);
+            this.ClientSize = new System.Drawing.Size(776, 185);
+            this.Controls.Add(this.new_password_txtbox);
+            this.Controls.Add(this.new_username_txtbox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cerrar_sesion_btn);
-            this.Controls.Add(this.ingresar_codigo_btn);
+            this.Controls.Add(this.agreagar_usuario_btn);
             this.Controls.Add(this.fecha_dev_txtbox);
             this.Controls.Add(this.codigo_txtbox);
             this.Controls.Add(this.autor_txtbox);
@@ -162,7 +199,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.arrendar_libro_btn);
+            this.Controls.Add(this.agregar_libro_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "vista_administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -174,7 +211,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button arrendar_libro_btn;
+        private System.Windows.Forms.Button agregar_libro_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -183,8 +220,12 @@
         private System.Windows.Forms.TextBox autor_txtbox;
         private System.Windows.Forms.TextBox codigo_txtbox;
         private System.Windows.Forms.TextBox fecha_dev_txtbox;
-        private System.Windows.Forms.Button ingresar_codigo_btn;
+        private System.Windows.Forms.Button agreagar_usuario_btn;
         private System.Windows.Forms.Button cerrar_sesion_btn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox new_password_txtbox;
+        private System.Windows.Forms.TextBox new_username_txtbox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

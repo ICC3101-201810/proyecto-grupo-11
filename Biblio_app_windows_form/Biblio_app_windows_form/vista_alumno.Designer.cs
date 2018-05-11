@@ -30,7 +30,7 @@
         {
             this.buscar_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.busqueda_txtbox = new System.Windows.Forms.TextBox();
             this.filtro_cbbox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +59,7 @@
             this.buscar_btn.TabIndex = 0;
             this.buscar_btn.Text = "Buscar";
             this.buscar_btn.UseVisualStyleBackColor = true;
+            this.buscar_btn.Click += new System.EventHandler(this.buscar_btn_Click);
             // 
             // label1
             // 
@@ -69,12 +70,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Buscar segun:";
             // 
-            // textBox1
+            // busqueda_txtbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(219, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 20);
-            this.textBox1.TabIndex = 2;
+            this.busqueda_txtbox.Location = new System.Drawing.Point(219, 12);
+            this.busqueda_txtbox.Name = "busqueda_txtbox";
+            this.busqueda_txtbox.Size = new System.Drawing.Size(256, 20);
+            this.busqueda_txtbox.TabIndex = 2;
             // 
             // filtro_cbbox
             // 
@@ -244,7 +245,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.filtro_cbbox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.busqueda_txtbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buscar_btn);
             this.Name = "vista_alumno";
@@ -259,7 +260,7 @@
 
         private System.Windows.Forms.Button buscar_btn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox busqueda_txtbox;
         private System.Windows.Forms.ComboBox filtro_cbbox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
