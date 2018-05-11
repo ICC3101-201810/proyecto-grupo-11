@@ -42,5 +42,12 @@ namespace Biblio_app_windows_form
         {
             this.Close();
         }
+
+        private void buscar_btn_Click(object sender, EventArgs e)
+        {
+            string busqueda = busqueda_txtbox.Text;
+            string filtro = filtro_cbbox.Text;
+            //abrir ventana de resultados de busqueda
+        }
     }
 }
