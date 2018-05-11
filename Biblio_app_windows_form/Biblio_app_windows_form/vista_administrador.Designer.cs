@@ -374,8 +374,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.agregar_libro_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+<<<<<<< HEAD
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 0123c9faea58d7552ba86e5de5c1db72791a1572
             this.Name = "vista_administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biblio app (admin)";
