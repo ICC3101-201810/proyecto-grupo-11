@@ -15,34 +15,6 @@ namespace Biblio_app_windows_form
         public event EventHandler<AgregarUsuarioEventArgs> OnAgregarUsuario;
         public event EventHandler<AgregarLibroEventArgs> OnAgregarLibro;
 
-        private void CrearNuevoUsuarioButton_Click(object sender, EventArgs e)
-        {
-            if(OnAgregarUsuario != null)
-            {
-                AgregarUsuarioEventArgs usuarioArgs = new AgregarUsuarioEventArgs();
-                usuarioArgs.Nombre = this.nombre_txtbox.Text;
-                usuarioArgs.Apellido = this.apellido_txtbox.Text;
-                usuarioArgs.Rut = this.rut_txtbox.Text+"-"+this.dgt_ver_txtbox.Text;
-                usuarioArgs.Usuario = this.new_username_txtbox.Text;
-                usuarioArgs.Password = this.new_password_txtbox.Text;
-                OnAgregarUsuario(this, usuarioArgs);
-            }
-        }
-
-        private void AgregarLibroButton_Click(object sender, EventArgs e)
-        {
-            if (OnAgregarLibro != null)
-            {
-                AgregarLibroEventArgs libroArgs = new AgregarLibroEventArgs();
-                libroArgs.Titulo = this.titulo_txtbox.Text;
-                libroArgs.Autor = this.autor_txtbox.Text;
-                libroArgs.Copia = Int32.Parse(this.copias_txtbox.Text);
-                libroArgs.CarreraAsociada = this.CarreraAsociada_txtBox.Text;
-                libroArgs.FechaCreacion = this.fecha_pub_txtbox.Text;
-                OnAgregarLibro(this, libroArgs);
-            }
-        }
-
         public vista_administrador()
         {
             InitializeComponent();
@@ -73,5 +45,37 @@ namespace Biblio_app_windows_form
         {
 
         }
+
+        private void agregar_libro_btn_Click(object sender, EventArgs e)
+        {
+            if (OnAgregarLibro != null)
+            {
+                AgregarLibroEventArgs libroArgs = new AgregarLibroEventArgs();
+                libroArgs.Titulo = this.titulo_txtbox.Text;
+                libroArgs.Autor = this.autor_txtbox.Text;
+                libroArgs.Copia = Int32.Parse(this.copias_txtbox.Text);
+                libroArgs.CarreraAsociada = this.CarreraAsociada_txtBox.Text;
+                libroArgs.FechaCreacion = this.fecha_pub_txtbox.Text;
+                OnAgregarLibro(this, libroArgs);
+                MessageBox.Show("Libro agregado con éxito!");
+            }
+        }
+
+        private void agreagar_usuario_btn_Click(object sender, EventArgs e)
+        {
+            if (OnAgregarUsuario != null)
+            {
+                AgregarUsuarioEventArgs usuarioArgs = new AgregarUsuarioEventArgs();
+                usuarioArgs.Nombre = this.nombre_txtbox.Text;
+                usuarioArgs.Apellido = this.apellido_txtbox.Text;
+                usuarioArgs.Rut = this.rut_txtbox.Text + "-" + this.dgt_ver_txtbox.Text;
+                usuarioArgs.Usuario = this.new_username_txtbox.Text;
+                usuarioArgs.Password = this.new_password_txtbox.Text;
+                OnAgregarUsuario(this, usuarioArgs);
+                MessageBox.Show("Usuario creado con éxito!");
+            }
+        }
+
+        
     }
 }

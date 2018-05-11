@@ -9,5 +9,6 @@ namespace Biblio_app_windows_form
     public class ArrendarLibroEventArgs : EventArgs
     {
         public int copia { get; set; }
+        public string titulo { get; set; }
     }
 }

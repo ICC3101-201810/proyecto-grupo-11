@@ -50,12 +50,6 @@
     <Compile Include="AgregarUsuarioEventArgs.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="ArrendarLibroEventArgs.cs" />
-    <Compile Include="Arrendar_libro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Arrendar_libro.Designer.cs">
-      <DependentUpon>Arrendar_libro.cs</DependentUpon>
-    </Compile>
     <Compile Include="Arriendo.cs" />
     <Compile Include="inicio_sesion.cs">
       <SubType>Form</SubType>
@@ -71,6 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Revista.cs" />
     <Compile Include="Ubicacion.cs" />
+    <Compile Include="UsuarioController.cs" />
     <Compile Include="Video.cs" />
     <Compile Include="vista_administrador.cs">
       <SubType>Form</SubType>
@@ -84,9 +79,6 @@
     <Compile Include="vista_alumno.Designer.cs">
       <DependentUpon>vista_alumno.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Arrendar_libro.resx">
-      <DependentUpon>Arrendar_libro.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="inicio_sesion.resx">
       <DependentUpon>inicio_sesion.cs</DependentUpon>
     </EmbeddedResource>

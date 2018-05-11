@@ -8,7 +8,7 @@ namespace Biblio_app_windows_form
 {
     public class Libro : MaterialEducativo
     {
-        string Titulo;
+        string Titulo { get; set; }
         
         public int Copia { get; set; }
 
@@ -59,6 +59,18 @@ namespace Biblio_app_windows_form
             set
             {
                 Copia = value;
+            }
+        }
+        
+        public string Titulos
+        {
+            get
+            {
+                return Titulo;
+            }
+            set
+            {
+                Titulo = value;
             }
         }
     }

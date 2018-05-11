@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Biblio_app_windows_form
-{
+{   [Serializable()]
     class AdminController
     {
         List<Alumno> Usuario;
@@ -27,12 +30,20 @@ namespace Biblio_app_windows_form
         {
             Libro libro = new Libro(e.CarreraAsociada, e.Copia, e.Autor, e.FechaCreacion, 0, new List<string>(), null, e.Titulo);
             Libros.Add(libro);
+
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("libro.bin", FileMode.Create, FileAccess.Write);
+            formatter.Serialize(stream, libro);
         }
 
         private void Vista_Administrador_OnAgregarUsuario(object sender, AgregarUsuarioEventArgs e)
         {
             Alumno alumno = new Alumno(0, new List<string>(), e.Nombre, e.Apellido, e.Rut, e.Usuario, e.Password);
             Usuario.Add(alumno);
+    
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("alumno.bin", FileMode.Create, FileAccess.Write);
+            formatter.Serialize(stream, alumno);
         }
-    }
+    }   
 }
