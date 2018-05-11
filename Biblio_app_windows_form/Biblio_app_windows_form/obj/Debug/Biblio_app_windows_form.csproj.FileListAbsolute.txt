@@ -9,3 +9,4 @@ C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_wind
 C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.pdb
 C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.inicio_sesion.resources
 C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.vista_administrador.resources
+C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.vista_alumno.resources

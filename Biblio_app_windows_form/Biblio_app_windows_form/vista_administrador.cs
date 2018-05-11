@@ -16,5 +16,10 @@ namespace Biblio_app_windows_form
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

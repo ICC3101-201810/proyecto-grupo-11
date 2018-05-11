@@ -51,6 +51,7 @@
             this.salir_btn.TabIndex = 1;
             this.salir_btn.Text = "Salir";
             this.salir_btn.UseVisualStyleBackColor = true;
+            this.salir_btn.Click += new System.EventHandler(this.salir_btn_Click);
             // 
             // label1
             // 

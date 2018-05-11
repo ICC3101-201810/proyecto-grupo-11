@@ -43,9 +43,11 @@
             this.seleccionar_libro_cbbox = new System.Windows.Forms.ComboBox();
             this.devolver_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.deuda_txtbox = new System.Windows.Forms.TextBox();
             this.renovar_btn = new System.Windows.Forms.Button();
             this.pagar_deuda_chkbox = new System.Windows.Forms.CheckBox();
+            this.salir_btn = new System.Windows.Forms.Button();
+            this.cerrar_sesion_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,13 +181,12 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Deuda";
             // 
-            // textBox2
+            // deuda_txtbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 317);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.deuda_txtbox.Location = new System.Drawing.Point(107, 317);
+            this.deuda_txtbox.Name = "deuda_txtbox";
+            this.deuda_txtbox.Size = new System.Drawing.Size(158, 20);
+            this.deuda_txtbox.TabIndex = 10;
             // 
             // renovar_btn
             // 
@@ -205,15 +206,37 @@
             this.pagar_deuda_chkbox.TabIndex = 13;
             this.pagar_deuda_chkbox.Text = "Pagar deuda";
             this.pagar_deuda_chkbox.UseVisualStyleBackColor = true;
+            this.pagar_deuda_chkbox.CheckedChanged += new System.EventHandler(this.pagar_deuda_chkbox_CheckedChanged);
+            // 
+            // salir_btn
+            // 
+            this.salir_btn.Location = new System.Drawing.Point(468, 323);
+            this.salir_btn.Name = "salir_btn";
+            this.salir_btn.Size = new System.Drawing.Size(88, 23);
+            this.salir_btn.TabIndex = 14;
+            this.salir_btn.Text = "Salir";
+            this.salir_btn.UseVisualStyleBackColor = true;
+            this.salir_btn.Click += new System.EventHandler(this.salir_btn_Click);
+            // 
+            // cerrar_sesion_btn
+            // 
+            this.cerrar_sesion_btn.Location = new System.Drawing.Point(468, 294);
+            this.cerrar_sesion_btn.Name = "cerrar_sesion_btn";
+            this.cerrar_sesion_btn.Size = new System.Drawing.Size(87, 23);
+            this.cerrar_sesion_btn.TabIndex = 15;
+            this.cerrar_sesion_btn.Text = "Cerrar sesión";
+            this.cerrar_sesion_btn.UseVisualStyleBackColor = true;
             // 
             // vista_alumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 358);
+            this.Controls.Add(this.cerrar_sesion_btn);
+            this.Controls.Add(this.salir_btn);
             this.Controls.Add(this.pagar_deuda_chkbox);
             this.Controls.Add(this.renovar_btn);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.deuda_txtbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.devolver_btn);
             this.Controls.Add(this.seleccionar_libro_cbbox);
@@ -249,8 +272,10 @@
         private System.Windows.Forms.ComboBox seleccionar_libro_cbbox;
         private System.Windows.Forms.Button devolver_btn;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox deuda_txtbox;
         private System.Windows.Forms.Button renovar_btn;
         private System.Windows.Forms.CheckBox pagar_deuda_chkbox;
+        private System.Windows.Forms.Button salir_btn;
+        private System.Windows.Forms.Button cerrar_sesion_btn;
     }
 }
