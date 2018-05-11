@@ -2,3 +2,7 @@
 Biblio_app_windows_form/.vs/Biblio_app_windows_form/v15/Server/sqlite3/storage.ide
 Biblio_app_windows_form/.vs/Biblio_app_windows_form/v15/.suo
 Biblio_app_windows_form/.vs/Biblio_app_windows_form/v15/.suo
+*.ide-shm
+*.ide-wal
+*.cache
+Biblio_app_windows_form/Biblio_app_windows_form/obj/Debug/Biblio_app_windows_form.csproj.CoreCompileInputs.cache
