@@ -19,6 +19,8 @@ namespace Biblio_app_windows_form
             Application.Run(new inicio_sesion());
         }
 
+        
+
         /*
         public static List<Persona> usuarios;
         public static List<Persona> alumnos;

@@ -17,9 +17,9 @@ namespace Biblio_app_windows_form
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void salir_btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

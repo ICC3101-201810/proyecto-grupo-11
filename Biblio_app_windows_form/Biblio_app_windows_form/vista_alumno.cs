@@ -40,7 +40,7 @@ namespace Biblio_app_windows_form
 
         private void salir_btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void buscar_btn_Click(object sender, EventArgs e)

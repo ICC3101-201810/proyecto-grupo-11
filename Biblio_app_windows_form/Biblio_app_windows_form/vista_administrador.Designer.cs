@@ -39,7 +39,7 @@
             this.fecha_dev_txtbox = new System.Windows.Forms.TextBox();
             this.agreagar_usuario_btn = new System.Windows.Forms.Button();
             this.cerrar_sesion_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.salir_btn = new System.Windows.Forms.Button();
             this.new_password_txtbox = new System.Windows.Forms.TextBox();
             this.new_username_txtbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -137,15 +137,15 @@
             this.cerrar_sesion_btn.Text = "Cerrar sesión";
             this.cerrar_sesion_btn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // salir_btn
             // 
-            this.button1.Location = new System.Drawing.Point(23, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.salir_btn.Location = new System.Drawing.Point(23, 150);
+            this.salir_btn.Name = "salir_btn";
+            this.salir_btn.Size = new System.Drawing.Size(119, 23);
+            this.salir_btn.TabIndex = 11;
+            this.salir_btn.Text = "Salir";
+            this.salir_btn.UseVisualStyleBackColor = true;
+            this.salir_btn.Click += new System.EventHandler(this.salir_btn_Click);
             // 
             // new_password_txtbox
             // 
@@ -188,7 +188,7 @@
             this.Controls.Add(this.new_username_txtbox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.salir_btn);
             this.Controls.Add(this.cerrar_sesion_btn);
             this.Controls.Add(this.agreagar_usuario_btn);
             this.Controls.Add(this.fecha_dev_txtbox);
@@ -222,7 +222,7 @@
         private System.Windows.Forms.TextBox fecha_dev_txtbox;
         private System.Windows.Forms.Button agreagar_usuario_btn;
         private System.Windows.Forms.Button cerrar_sesion_btn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button salir_btn;
         private System.Windows.Forms.TextBox new_password_txtbox;
         private System.Windows.Forms.TextBox new_username_txtbox;
         private System.Windows.Forms.Label label5;

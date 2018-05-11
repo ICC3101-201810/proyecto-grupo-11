@@ -17,7 +17,7 @@ namespace Biblio_app_windows_form
             Usuario = new List<Alumno>();
             Admin = new List<Administrador>();
             this.vista_Administrador = vista_Administrador;
-            this.vista_Administrador.
+            
         }
     }
 }
