@@ -1,0 +1,7 @@
+C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\BiblioApp\BiblioApp\bin\Debug\BiblioApp.exe.config
+C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\BiblioApp\BiblioApp\bin\Debug\BiblioApp.exe
+C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\BiblioApp\BiblioApp\bin\Debug\BiblioApp.pdb
+C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\BiblioApp\BiblioApp\obj\Debug\BiblioApp.csprojResolveAssemblyReference.cache
+C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\BiblioApp\BiblioApp\obj\Debug\BiblioApp.csproj.CoreCompileInputs.cache
+C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\BiblioApp\BiblioApp\obj\Debug\BiblioApp.exe
+C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\BiblioApp\BiblioApp\obj\Debug\BiblioApp.pdb
