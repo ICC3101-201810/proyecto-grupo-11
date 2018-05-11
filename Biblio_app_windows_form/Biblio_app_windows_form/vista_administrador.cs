@@ -12,6 +12,8 @@ namespace Biblio_app_windows_form
 {
     public partial class vista_administrador : Form
     {
+        public event EventHandler<AgregarUsuarioEventArgs> OnAgregarUsuario;
+
         public vista_administrador()
         {
             InitializeComponent();

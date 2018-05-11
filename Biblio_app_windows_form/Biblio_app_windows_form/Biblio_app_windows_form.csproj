@@ -71,9 +71,6 @@
     <Compile Include="vista_administrador.Designer.cs">
       <DependentUpon>vista_administrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="vista_administrador1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="vista_alumno.cs">
       <SubType>Form</SubType>
     </Compile>
