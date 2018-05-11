@@ -29,5 +29,17 @@ namespace Biblio_app_windows_form
                 Deuda = value;
             }
         }
+
+        public string Usuario
+        {
+            get
+            {
+                return Usuario;
+            }
+            set
+            {
+                Usuario = value;
+            }
+        }
     }
 }

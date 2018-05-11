@@ -56,13 +56,15 @@
             this.tipo_alumno_rdiobtn = new System.Windows.Forms.RadioButton();
             this.tipo_profesor_rdiobtn = new System.Windows.Forms.RadioButton();
             this.tipo_grpbox = new System.Windows.Forms.GroupBox();
+            this.CarreraAsociada_txtBox = new System.Windows.Forms.TextBox();
+            this.carrera = new System.Windows.Forms.Label();
             this.tipo_grpbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // agregar_libro_btn
             // 
-            this.agregar_libro_btn.Location = new System.Drawing.Point(396, 143);
-            this.agregar_libro_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.agregar_libro_btn.Location = new System.Drawing.Point(396, 199);
+            this.agregar_libro_btn.Margin = new System.Windows.Forms.Padding(4);
             this.agregar_libro_btn.Name = "agregar_libro_btn";
             this.agregar_libro_btn.Size = new System.Drawing.Size(100, 59);
             this.agregar_libro_btn.TabIndex = 0;
@@ -112,7 +114,7 @@
             // titulo_txtbox
             // 
             this.titulo_txtbox.Location = new System.Drawing.Point(180, 15);
-            this.titulo_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.titulo_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.titulo_txtbox.Name = "titulo_txtbox";
             this.titulo_txtbox.Size = new System.Drawing.Size(315, 22);
             this.titulo_txtbox.TabIndex = 5;
@@ -120,7 +122,7 @@
             // autor_txtbox
             // 
             this.autor_txtbox.Location = new System.Drawing.Point(180, 47);
-            this.autor_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.autor_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.autor_txtbox.Name = "autor_txtbox";
             this.autor_txtbox.Size = new System.Drawing.Size(315, 22);
             this.autor_txtbox.TabIndex = 6;
@@ -128,7 +130,7 @@
             // copias_txtbox
             // 
             this.copias_txtbox.Location = new System.Drawing.Point(180, 79);
-            this.copias_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.copias_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.copias_txtbox.Name = "copias_txtbox";
             this.copias_txtbox.Size = new System.Drawing.Size(315, 22);
             this.copias_txtbox.TabIndex = 7;
@@ -136,15 +138,15 @@
             // fecha_pub_txtbox
             // 
             this.fecha_pub_txtbox.Location = new System.Drawing.Point(180, 111);
-            this.fecha_pub_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.fecha_pub_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.fecha_pub_txtbox.Name = "fecha_pub_txtbox";
             this.fecha_pub_txtbox.Size = new System.Drawing.Size(315, 22);
             this.fecha_pub_txtbox.TabIndex = 8;
             // 
             // agreagar_usuario_btn
             // 
-            this.agreagar_usuario_btn.Location = new System.Drawing.Point(396, 377);
-            this.agreagar_usuario_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.agreagar_usuario_btn.Location = new System.Drawing.Point(395, 416);
+            this.agreagar_usuario_btn.Margin = new System.Windows.Forms.Padding(4);
             this.agreagar_usuario_btn.Name = "agreagar_usuario_btn";
             this.agreagar_usuario_btn.Size = new System.Drawing.Size(100, 59);
             this.agreagar_usuario_btn.TabIndex = 9;
@@ -153,8 +155,8 @@
             // 
             // cerrar_sesion_btn
             // 
-            this.cerrar_sesion_btn.Location = new System.Drawing.Point(337, 457);
-            this.cerrar_sesion_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cerrar_sesion_btn.Location = new System.Drawing.Point(337, 485);
+            this.cerrar_sesion_btn.Margin = new System.Windows.Forms.Padding(4);
             this.cerrar_sesion_btn.Name = "cerrar_sesion_btn";
             this.cerrar_sesion_btn.Size = new System.Drawing.Size(159, 28);
             this.cerrar_sesion_btn.TabIndex = 10;
@@ -164,8 +166,8 @@
             // 
             // salir_btn
             // 
-            this.salir_btn.Location = new System.Drawing.Point(337, 487);
-            this.salir_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.salir_btn.Location = new System.Drawing.Point(337, 521);
+            this.salir_btn.Margin = new System.Windows.Forms.Padding(4);
             this.salir_btn.Name = "salir_btn";
             this.salir_btn.Size = new System.Drawing.Size(159, 28);
             this.salir_btn.TabIndex = 11;
@@ -175,16 +177,16 @@
             // 
             // new_password_txtbox
             // 
-            this.new_password_txtbox.Location = new System.Drawing.Point(180, 252);
-            this.new_password_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.new_password_txtbox.Location = new System.Drawing.Point(179, 296);
+            this.new_password_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.new_password_txtbox.Name = "new_password_txtbox";
             this.new_password_txtbox.Size = new System.Drawing.Size(315, 22);
             this.new_password_txtbox.TabIndex = 15;
             // 
             // new_username_txtbox
             // 
-            this.new_username_txtbox.Location = new System.Drawing.Point(180, 220);
-            this.new_username_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.new_username_txtbox.Location = new System.Drawing.Point(179, 266);
+            this.new_username_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.new_username_txtbox.Name = "new_username_txtbox";
             this.new_username_txtbox.Size = new System.Drawing.Size(315, 22);
             this.new_username_txtbox.TabIndex = 14;
@@ -192,7 +194,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 256);
+            this.label5.Location = new System.Drawing.Point(51, 299);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 17);
@@ -202,7 +204,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(51, 224);
+            this.label6.Location = new System.Drawing.Point(51, 269);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
@@ -211,16 +213,16 @@
             // 
             // nombre_txtbox
             // 
-            this.nombre_txtbox.Location = new System.Drawing.Point(180, 313);
-            this.nombre_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nombre_txtbox.Location = new System.Drawing.Point(179, 356);
+            this.nombre_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.nombre_txtbox.Name = "nombre_txtbox";
             this.nombre_txtbox.Size = new System.Drawing.Size(315, 22);
             this.nombre_txtbox.TabIndex = 21;
             // 
             // rut_txtbox
             // 
-            this.rut_txtbox.Location = new System.Drawing.Point(180, 281);
-            this.rut_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rut_txtbox.Location = new System.Drawing.Point(179, 326);
+            this.rut_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.rut_txtbox.MaxLength = 8;
             this.rut_txtbox.Name = "rut_txtbox";
             this.rut_txtbox.Size = new System.Drawing.Size(268, 22);
@@ -229,7 +231,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 316);
+            this.label8.Location = new System.Drawing.Point(51, 356);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 17);
@@ -239,17 +241,18 @@
             // rut_lbl
             // 
             this.rut_lbl.AutoSize = true;
-            this.rut_lbl.Location = new System.Drawing.Point(51, 284);
+            this.rut_lbl.Location = new System.Drawing.Point(51, 329);
             this.rut_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rut_lbl.Name = "rut_lbl";
             this.rut_lbl.Size = new System.Drawing.Size(37, 17);
             this.rut_lbl.TabIndex = 18;
             this.rut_lbl.Text = "RUT";
+            this.rut_lbl.Click += new System.EventHandler(this.rut_lbl_Click);
             // 
             // dgt_ver_txtbox
             // 
-            this.dgt_ver_txtbox.Location = new System.Drawing.Point(471, 281);
-            this.dgt_ver_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgt_ver_txtbox.Location = new System.Drawing.Point(472, 326);
+            this.dgt_ver_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.dgt_ver_txtbox.MaxLength = 1;
             this.dgt_ver_txtbox.Name = "dgt_ver_txtbox";
             this.dgt_ver_txtbox.Size = new System.Drawing.Size(24, 22);
@@ -258,7 +261,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(455, 284);
+            this.label9.Location = new System.Drawing.Point(455, 326);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 17);
@@ -267,8 +270,8 @@
             // 
             // apellido_txtbox
             // 
-            this.apellido_txtbox.Location = new System.Drawing.Point(180, 345);
-            this.apellido_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.apellido_txtbox.Location = new System.Drawing.Point(180, 386);
+            this.apellido_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.apellido_txtbox.Name = "apellido_txtbox";
             this.apellido_txtbox.Size = new System.Drawing.Size(315, 22);
             this.apellido_txtbox.TabIndex = 25;
@@ -276,7 +279,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(51, 348);
+            this.label10.Location = new System.Drawing.Point(51, 386);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 17);
@@ -288,7 +291,7 @@
             this.tipo_alumno_rdiobtn.AutoSize = true;
             this.tipo_alumno_rdiobtn.Checked = true;
             this.tipo_alumno_rdiobtn.Location = new System.Drawing.Point(8, 23);
-            this.tipo_alumno_rdiobtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tipo_alumno_rdiobtn.Margin = new System.Windows.Forms.Padding(4);
             this.tipo_alumno_rdiobtn.Name = "tipo_alumno_rdiobtn";
             this.tipo_alumno_rdiobtn.Size = new System.Drawing.Size(76, 21);
             this.tipo_alumno_rdiobtn.TabIndex = 26;
@@ -300,7 +303,7 @@
             // 
             this.tipo_profesor_rdiobtn.AutoSize = true;
             this.tipo_profesor_rdiobtn.Location = new System.Drawing.Point(125, 23);
-            this.tipo_profesor_rdiobtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tipo_profesor_rdiobtn.Margin = new System.Windows.Forms.Padding(4);
             this.tipo_profesor_rdiobtn.Name = "tipo_profesor_rdiobtn";
             this.tipo_profesor_rdiobtn.Size = new System.Drawing.Size(83, 21);
             this.tipo_profesor_rdiobtn.TabIndex = 27;
@@ -312,20 +315,39 @@
             // 
             this.tipo_grpbox.Controls.Add(this.tipo_alumno_rdiobtn);
             this.tipo_grpbox.Controls.Add(this.tipo_profesor_rdiobtn);
-            this.tipo_grpbox.Location = new System.Drawing.Point(55, 377);
-            this.tipo_grpbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tipo_grpbox.Location = new System.Drawing.Point(54, 416);
+            this.tipo_grpbox.Margin = new System.Windows.Forms.Padding(4);
             this.tipo_grpbox.Name = "tipo_grpbox";
-            this.tipo_grpbox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tipo_grpbox.Padding = new System.Windows.Forms.Padding(4);
             this.tipo_grpbox.Size = new System.Drawing.Size(252, 59);
             this.tipo_grpbox.TabIndex = 28;
             this.tipo_grpbox.TabStop = false;
             this.tipo_grpbox.Text = "Tipo";
+            // 
+            // CarreraAsociada_txtBox
+            // 
+            this.CarreraAsociada_txtBox.Location = new System.Drawing.Point(179, 140);
+            this.CarreraAsociada_txtBox.Name = "CarreraAsociada_txtBox";
+            this.CarreraAsociada_txtBox.Size = new System.Drawing.Size(315, 22);
+            this.CarreraAsociada_txtBox.TabIndex = 29;
+            // 
+            // carrera
+            // 
+            this.carrera.AutoSize = true;
+            this.carrera.Location = new System.Drawing.Point(51, 143);
+            this.carrera.Name = "carrera";
+            this.carrera.Size = new System.Drawing.Size(118, 17);
+            this.carrera.TabIndex = 30;
+            this.carrera.Text = "Carrera Asociada";
+            this.carrera.Click += new System.EventHandler(this.label7_Click);
             // 
             // vista_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 562);
+            this.Controls.Add(this.carrera);
+            this.Controls.Add(this.CarreraAsociada_txtBox);
             this.Controls.Add(this.tipo_grpbox);
             this.Controls.Add(this.apellido_txtbox);
             this.Controls.Add(this.label10);
@@ -352,14 +374,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.agregar_libro_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-<<<<<<< HEAD
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
->>>>>>> a7c28ea2149ea6d36eb2793430e205e981aad555
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "vista_administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biblio app (admin)";
+            this.Load += new System.EventHandler(this.vista_administrador_Load);
             this.tipo_grpbox.ResumeLayout(false);
             this.tipo_grpbox.PerformLayout();
             this.ResumeLayout(false);
@@ -396,5 +416,7 @@
         private System.Windows.Forms.RadioButton tipo_alumno_rdiobtn;
         private System.Windows.Forms.RadioButton tipo_profesor_rdiobtn;
         private System.Windows.Forms.GroupBox tipo_grpbox;
+        private System.Windows.Forms.TextBox CarreraAsociada_txtBox;
+        private System.Windows.Forms.Label carrera;
     }
 }

@@ -55,5 +55,10 @@ namespace Biblio_app_windows_form
             this.Close();
             //abrir_inicio();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
