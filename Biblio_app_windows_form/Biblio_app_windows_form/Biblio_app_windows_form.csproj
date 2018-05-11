@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AdminController.cs" />
     <Compile Include="Administrador.cs" />
+    <Compile Include="AgregarLibroEventArgs.cs" />
     <Compile Include="AgregarUsuarioEventArgs.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="ArrendarLibroEventArgs.cs" />

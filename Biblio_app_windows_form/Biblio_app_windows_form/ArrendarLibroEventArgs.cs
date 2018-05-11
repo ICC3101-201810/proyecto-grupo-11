@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
 {
-    class ArrendarLibroEventArgs : EventArgs
+    public class ArrendarLibroEventArgs : EventArgs
     {
         public int copia { get; set; }
     }

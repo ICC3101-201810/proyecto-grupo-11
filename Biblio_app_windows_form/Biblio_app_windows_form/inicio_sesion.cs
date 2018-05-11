@@ -26,17 +26,22 @@ namespace Biblio_app_windows_form
             {// provisorio
                 vista_administrador vista_Administrador = new vista_administrador();
                 vista_Administrador.Show();
-                this.Hide();
+                //this.Hide();
             }// provisorio
             if (username_txtbox.Text == "alumno")
             {
                 vista_alumno vista_Alumno = new vista_alumno();
                 vista_Alumno.Show();
-                this.Hide();
+                //this.Hide();
             }
             
             // si corresponde a un alumno
 
+        }
+
+        public void abrir_inicio()
+        {
+            this.Show();
         }
 
         private void salir_btn_Click(object sender, EventArgs e)

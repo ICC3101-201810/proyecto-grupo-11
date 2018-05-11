@@ -49,5 +49,11 @@ namespace Biblio_app_windows_form
             string filtro = filtro_cbbox.Text;
             //abrir ventana de resultados de busqueda
         }
+
+        private void cerrar_sesion_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //abrir_inicio();
+        }
     }
 }
