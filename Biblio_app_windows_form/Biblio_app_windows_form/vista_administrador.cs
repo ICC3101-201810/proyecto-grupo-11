@@ -37,6 +37,8 @@ namespace Biblio_app_windows_form
                 libroArgs.Titulo = this.titulo_txtbox.Text;
                 libroArgs.Autor = this.autor_txtbox.Text;
                 libroArgs.Copia = Int32.Parse(this.copias_txtbox.Text);
+                libroArgs.CarreraAsociada = this.CarreraAsociada_txtBox.Text;
+                libroArgs.FechaCreacion = this.fecha_pub_txtbox.Text;
                 OnAgregarLibro(this, libroArgs);
             }
         }
@@ -44,6 +46,7 @@ namespace Biblio_app_windows_form
         public vista_administrador()
         {
             InitializeComponent();
+
         }
 
         private void salir_btn_Click(object sender, EventArgs e)
@@ -54,6 +57,21 @@ namespace Biblio_app_windows_form
         private void cerrar_sesion_btn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rut_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vista_administrador_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
