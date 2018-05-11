@@ -50,5 +50,10 @@ namespace Biblio_app_windows_form
         {
             Application.Exit();
         }
+
+        private void cerrar_sesion_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

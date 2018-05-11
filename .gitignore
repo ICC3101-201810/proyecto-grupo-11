@@ -6,3 +6,8 @@ Biblio_app_windows_form/.vs/Biblio_app_windows_form/v15/.suo
 *.ide-wal
 *.cache
 Biblio_app_windows_form/Biblio_app_windows_form/obj/Debug/Biblio_app_windows_form.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
+=======
+Biblio_app_windows_form/.vs/Biblio_app_windows_form/v15/.suo
+Biblio_app_windows_form/.vs/Biblio_app_windows_form/v15/Server/sqlite3/storage.ide
+>>>>>>> a7c28ea2149ea6d36eb2793430e205e981aad555
