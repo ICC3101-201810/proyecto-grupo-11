@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vista_administrador));
             this.agregar_libro_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -148,6 +149,7 @@
             this.cerrar_sesion_btn.TabIndex = 10;
             this.cerrar_sesion_btn.Text = "Cerrar sesión";
             this.cerrar_sesion_btn.UseVisualStyleBackColor = true;
+            this.cerrar_sesion_btn.Click += new System.EventHandler(this.cerrar_sesion_btn_Click);
             // 
             // salir_btn
             // 
@@ -322,6 +324,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.agregar_libro_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "vista_administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biblio app (admin)";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vista_alumno));
             this.buscar_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.busqueda_txtbox = new System.Windows.Forms.TextBox();
@@ -227,6 +228,7 @@
             this.cerrar_sesion_btn.TabIndex = 15;
             this.cerrar_sesion_btn.Text = "Cerrar sesión";
             this.cerrar_sesion_btn.UseVisualStyleBackColor = true;
+            this.cerrar_sesion_btn.Click += new System.EventHandler(this.cerrar_sesion_btn_Click);
             // 
             // vista_alumno
             // 
@@ -248,7 +250,10 @@
             this.Controls.Add(this.busqueda_txtbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buscar_btn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "vista_alumno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biblio App (alumno)";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
