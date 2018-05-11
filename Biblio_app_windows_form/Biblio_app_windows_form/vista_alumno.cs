@@ -16,5 +16,15 @@ namespace Biblio_app_windows_form
         {
             InitializeComponent();
         }
+
+        private void devolver_btn_Click(object sender, EventArgs e)
+        {
+            if 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

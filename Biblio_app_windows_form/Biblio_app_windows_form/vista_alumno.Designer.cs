@@ -37,10 +37,15 @@
             this.autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
             this.aviso_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.seleccionar_libro_cbbox = new System.Windows.Forms.ComboBox();
+            this.devolver_btn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.renovar_btn = new System.Windows.Forms.Button();
+            this.pagar_deuda_chkbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +128,12 @@
             this.fecha_dev.Name = "fecha_dev";
             this.fecha_dev.ReadOnly = true;
             // 
+            // aviso_estado
+            // 
+            this.aviso_estado.HeaderText = "Estado";
+            this.aviso_estado.Name = "aviso_estado";
+            this.aviso_estado.ReadOnly = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -132,16 +143,10 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Mis libros";
             // 
-            // aviso_estado
-            // 
-            this.aviso_estado.HeaderText = "Estado";
-            this.aviso_estado.Name = "aviso_estado";
-            this.aviso_estado.ReadOnly = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 286);
+            this.label3.Location = new System.Drawing.Point(17, 289);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 6;
@@ -155,11 +160,62 @@
             this.seleccionar_libro_cbbox.Size = new System.Drawing.Size(157, 21);
             this.seleccionar_libro_cbbox.TabIndex = 7;
             // 
+            // devolver_btn
+            // 
+            this.devolver_btn.Location = new System.Drawing.Point(271, 284);
+            this.devolver_btn.Name = "devolver_btn";
+            this.devolver_btn.Size = new System.Drawing.Size(75, 23);
+            this.devolver_btn.TabIndex = 8;
+            this.devolver_btn.Text = "Devolver";
+            this.devolver_btn.UseVisualStyleBackColor = true;
+            this.devolver_btn.Click += new System.EventHandler(this.devolver_btn_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(62, 320);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Deuda";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(107, 317);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(158, 20);
+            this.textBox2.TabIndex = 10;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // renovar_btn
+            // 
+            this.renovar_btn.Location = new System.Drawing.Point(352, 284);
+            this.renovar_btn.Name = "renovar_btn";
+            this.renovar_btn.Size = new System.Drawing.Size(75, 23);
+            this.renovar_btn.TabIndex = 12;
+            this.renovar_btn.Text = "Renovar";
+            this.renovar_btn.UseVisualStyleBackColor = true;
+            // 
+            // pagar_deuda_chkbox
+            // 
+            this.pagar_deuda_chkbox.AutoSize = true;
+            this.pagar_deuda_chkbox.Location = new System.Drawing.Point(271, 319);
+            this.pagar_deuda_chkbox.Name = "pagar_deuda_chkbox";
+            this.pagar_deuda_chkbox.Size = new System.Drawing.Size(87, 17);
+            this.pagar_deuda_chkbox.TabIndex = 13;
+            this.pagar_deuda_chkbox.Text = "Pagar deuda";
+            this.pagar_deuda_chkbox.UseVisualStyleBackColor = true;
+            // 
             // vista_alumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 450);
+            this.ClientSize = new System.Drawing.Size(567, 358);
+            this.Controls.Add(this.pagar_deuda_chkbox);
+            this.Controls.Add(this.renovar_btn);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.devolver_btn);
             this.Controls.Add(this.seleccionar_libro_cbbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -191,5 +247,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox seleccionar_libro_cbbox;
+        private System.Windows.Forms.Button devolver_btn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button renovar_btn;
+        private System.Windows.Forms.CheckBox pagar_deuda_chkbox;
     }
 }
