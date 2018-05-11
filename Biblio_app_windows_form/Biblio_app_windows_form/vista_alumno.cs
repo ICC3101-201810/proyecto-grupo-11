@@ -47,7 +47,13 @@ namespace Biblio_app_windows_form
         {
             string busqueda = busqueda_txtbox.Text;
             string filtro = filtro_cbbox.Text;
+            
             //abrir ventana de resultados de busqueda
+            Arrendar_libro arrendar_Libro = new Arrendar_libro();
+            arrendar_Libro.Show();
+
+            // aqui hay que pasarle la lista con los resultados de la busqueda hecha con "busqueda" y "filtro"
+            
         }
 
         private void cerrar_sesion_btn_Click(object sender, EventArgs e)
