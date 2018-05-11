@@ -23,3 +23,13 @@ C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\Biblio_app_windows_f
 C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.exe
 C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.pdb
 C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.Arrendar_libro.resources
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.csprojResolveAssemblyReference.cache
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.Arrendar_libro.resources
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.inicio_sesion.resources
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.Properties.Resources.resources
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.vista_administrador.resources
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.vista_alumno.resources
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.csproj.GenerateResource.cache
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.csproj.CoreCompileInputs.cache
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.exe
+C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.pdb
