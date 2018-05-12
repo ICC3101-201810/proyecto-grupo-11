@@ -14,9 +14,11 @@ namespace Biblio_app_windows_form
     {
         public event EventHandler<AgregarUsuarioEventArgs> OnAgregarUsuario;
         public event EventHandler<AgregarLibroEventArgs> OnAgregarLibro;
+        
 
         public vista_administrador()
         {
+            
             InitializeComponent();
 
         }
@@ -28,6 +30,7 @@ namespace Biblio_app_windows_form
 
         private void cerrar_sesion_btn_Click(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 

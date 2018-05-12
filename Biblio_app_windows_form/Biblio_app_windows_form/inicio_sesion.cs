@@ -22,16 +22,21 @@ namespace Biblio_app_windows_form
             // verificar inicio de sesion
             // si corresponde a un administrador:
             // esto es algo provisorio:
-            if (username_txtbox.Text == "admin")// provisorio
+            if (username_txtbox.Text == "admin" && password_txtbox.Text == "admin")// provisorio
             {// provisorio
-                vista_administrador vista_Administrador = new vista_administrador();
-                vista_Administrador.Show();
+                vista_administrador vista = new vista_administrador();
+                vista_alumno vista2 = new vista_alumno();
+                Controller controlador = new Controller(vista, vista2);
+                vista.Show();
                 //this.Hide();
             }// provisorio
             if (username_txtbox.Text == "alumno")
             {
-                vista_alumno vista_Alumno = new vista_alumno();
-                vista_Alumno.Show();
+                
+                vista_administrador vista = new vista_administrador();
+                vista_alumno vista2 = new vista_alumno();
+                Controller controlador = new Controller(vista, vista2);
+                vista2.Show();
                 //this.Hide();
             }
             
