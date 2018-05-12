@@ -27,6 +27,7 @@ namespace Biblio_app_windows_form
 
         public vista_alumno()
         {
+            
             InitializeComponent();
         }
 
@@ -72,6 +73,16 @@ namespace Biblio_app_windows_form
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void renovar_btn_Click(object sender, EventArgs e)
+        {
+            if (OnArrendar != null)
+            {
+                ArrendarLibroEventArgs arriendo = new ArrendarLibroEventArgs();
+                arriendo.titulo = this.seleccionar_libro_cbbox.Text;
+                OnArrendar(this, arriendo);
+            }
         }
     }
 }

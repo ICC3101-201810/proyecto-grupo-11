@@ -16,7 +16,13 @@ namespace Biblio_app_windows_form
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            /*vista_administrador vista = new vista_administrador();
+            vista_alumno vista2 = new vista_alumno();
+            Controller controlador = new Controller(vista, vista2);*/
+
             Application.Run(new inicio_sesion());
+            
         }
 
         

@@ -9,14 +9,16 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Biblio_app_windows_form
 {   [Serializable()]
-    class AdminController
+    class Controller
     {
         List<Alumno> Usuario;
         List<Administrador> Admin;
-        List<Libro> Libros;
+        public List<Libro> Libros;
         vista_administrador vista_Administrador;
+        vista_alumno vista_Alumno;
+        Libro libro;
 
-        public AdminController(vista_administrador vista_Administrador)
+        public Controller(vista_administrador vista_Administrador, vista_alumno vista_Alumno)
         {
             Usuario = new List<Alumno>();
             Admin = new List<Administrador>();
@@ -24,16 +26,18 @@ namespace Biblio_app_windows_form
             this.vista_Administrador = vista_Administrador;
             this.vista_Administrador.OnAgregarUsuario += Vista_Administrador_OnAgregarUsuario;
             this.vista_Administrador.OnAgregarLibro += Vista_Administrador_OnAgregarLibro;
+            this.vista_Alumno = vista_Alumno;
+            this.vista_Alumno.OnArrendar += Vista_Alumno_OnArrendar;
         }
 
-        public void Vista_Administrador_OnAgregarLibro(object sender, AgregarLibroEventArgs e)
+        private void Vista_Administrador_OnAgregarLibro(object sender, AgregarLibroEventArgs e)
         {
             Libro libro = new Libro(e.CarreraAsociada, e.Copia, e.Autor, e.FechaCreacion, 0, new List<string>(), null, e.Titulo);
             Libros.Add(libro);
 
-            IFormatter formatter = new BinaryFormatter();
+            /*IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("libro.bin", FileMode.Create, FileAccess.Write);
-            formatter.Serialize(stream, libro);
+            formatter.Serialize(stream, libro);*/
         }
 
         private void Vista_Administrador_OnAgregarUsuario(object sender, AgregarUsuarioEventArgs e)
@@ -41,9 +45,20 @@ namespace Biblio_app_windows_form
             Alumno alumno = new Alumno(0, new List<string>(), e.Nombre, e.Apellido, e.Rut, e.Usuario, e.Password);
             Usuario.Add(alumno);
     
-            IFormatter formatter = new BinaryFormatter();
+            /*IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("alumno.bin", FileMode.Create, FileAccess.Write);
-            formatter.Serialize(stream, alumno);
+            formatter.Serialize(stream, alumno);*/
+        }
+
+        private void Vista_Alumno_OnArrendar(object sender, ArrendarLibroEventArgs e)
+        {
+            foreach(Libro l in Libros)
+            {
+                if(l.Titulos == e.titulo && l.Copia > 0)
+                {
+                    l.Copia--;
+                }
+            }
         }
     }   
 }
