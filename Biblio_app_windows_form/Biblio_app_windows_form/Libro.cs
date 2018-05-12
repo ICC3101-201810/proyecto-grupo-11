@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
-{
+{    
+ 
+
     public class Libro : MaterialEducativo
     {
         string Titulo { get; set; }

@@ -8,6 +8,8 @@ namespace Biblio_app_windows_form
 {
     static class Program
     {
+
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,11 +19,13 @@ namespace Biblio_app_windows_form
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            /*vista_administrador vista = new vista_administrador();
+            vista_administrador vista = new vista_administrador();
             vista_alumno vista2 = new vista_alumno();
-            Controller controlador = new Controller(vista, vista2);*/
+            inicio_sesion i_s = new inicio_sesion();
+            
+            Controller controlador = new Controller(vista, vista2, i_s);
 
-            Application.Run(new inicio_sesion());
+            Application.Run(i_s);
             
         }
 

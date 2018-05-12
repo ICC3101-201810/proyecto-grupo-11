@@ -12,6 +12,8 @@ namespace Biblio_app_windows_form
 {
     public partial class inicio_sesion : Form
     {
+        public event EventHandler<InicioEventArgs> OnInicio;
+
         public inicio_sesion()
         {
             InitializeComponent();
@@ -26,18 +28,20 @@ namespace Biblio_app_windows_form
             {// provisorio
                 vista_administrador vista = new vista_administrador();
                 vista_alumno vista2 = new vista_alumno();
-                Controller controlador = new Controller(vista, vista2);
+                inicio_sesion i_s = new inicio_sesion();
+                Controller controlador = new Controller(vista, vista2, i_s);
                 vista.Show();
-                //this.Hide();
+                this.Hide();
             }// provisorio
             if (username_txtbox.Text == "alumno")
             {
                 
                 vista_administrador vista = new vista_administrador();
                 vista_alumno vista2 = new vista_alumno();
-                Controller controlador = new Controller(vista, vista2);
+                inicio_sesion i_s = new inicio_sesion();
+                Controller controlador = new Controller(vista, vista2, i_s);
                 vista2.Show();
-                //this.Hide();
+                this.Hide();
             }
             
             // si corresponde a un alumno

@@ -13,6 +13,8 @@ namespace Biblio_app_windows_form
     public partial class vista_alumno : Form
     {
         public event EventHandler<ArrendarLibroEventArgs> OnArrendar;
+        
+
 
         private void ArrendarLibroButton_Click(object sender, EventArgs e)
         {
@@ -27,8 +29,8 @@ namespace Biblio_app_windows_form
 
         public vista_alumno()
         {
-            
             InitializeComponent();
+            
         }
 
         private void devolver_btn_Click(object sender, EventArgs e)
@@ -66,6 +68,11 @@ namespace Biblio_app_windows_form
 
         private void cerrar_sesion_btn_Click(object sender, EventArgs e)
         {
+            vista_administrador vista = new vista_administrador();
+            vista_alumno vista2 = new vista_alumno();
+            inicio_sesion i_s = new inicio_sesion();
+            Controller controlador = new Controller(vista, vista2, i_s);
+            i_s.Show();
             this.Close();
             //abrir_inicio();
         }
@@ -82,7 +89,10 @@ namespace Biblio_app_windows_form
                 ArrendarLibroEventArgs arriendo = new ArrendarLibroEventArgs();
                 arriendo.titulo = this.seleccionar_libro_cbbox.Text;
                 OnArrendar(this, arriendo);
+                MessageBox.Show("Arriendo exitoso");
             }
         }
+
+        
     }
 }

@@ -30,7 +30,11 @@ namespace Biblio_app_windows_form
 
         private void cerrar_sesion_btn_Click(object sender, EventArgs e)
         {
-            
+            vista_administrador vista = new vista_administrador();
+            vista_alumno vista2 = new vista_alumno();
+            inicio_sesion i_s = new inicio_sesion();
+            Controller controlador = new Controller(vista, vista2, i_s);
+            i_s.Show();
             this.Close();
         }
 
@@ -56,10 +60,12 @@ namespace Biblio_app_windows_form
                 AgregarLibroEventArgs libroArgs = new AgregarLibroEventArgs();
                 libroArgs.Titulo = this.titulo_txtbox.Text;
                 libroArgs.Autor = this.autor_txtbox.Text;
+                
                 libroArgs.Copia = Int32.Parse(this.copias_txtbox.Text);
                 libroArgs.CarreraAsociada = this.CarreraAsociada_txtBox.Text;
                 libroArgs.FechaCreacion = this.fecha_pub_txtbox.Text;
                 OnAgregarLibro(this, libroArgs);
+                
                 MessageBox.Show("Libro agregado con éxito!");
             }
         }

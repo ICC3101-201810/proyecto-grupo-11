@@ -11,8 +11,8 @@ namespace Biblio_app_windows_form
         string Nombre;
         string Apellido;
         string Rut;
-        string Usuario;
-        string Password;
+        public string Usuario { get; set; }
+        public string Password { get; set; }
 
         public Persona(string miNombre, string miApellido, string miRut, string miUsuario, string miPassword)
         {
