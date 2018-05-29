@@ -30,6 +30,8 @@ namespace Biblio_app_windows_form
         public vista_alumno()
         {
             InitializeComponent();
+            tipo_usuario_label.Text = "Alumno";
+            nombre_usuario_label.Text = "Prueba";
             
         }
 
@@ -92,7 +94,5 @@ namespace Biblio_app_windows_form
                 MessageBox.Show("Arriendo exitoso");
             }
         }
-
-        
     }
 }
