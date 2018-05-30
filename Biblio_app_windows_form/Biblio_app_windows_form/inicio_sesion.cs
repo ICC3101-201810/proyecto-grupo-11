@@ -24,7 +24,7 @@ namespace Biblio_app_windows_form
             // verificar inicio de sesion
             // si corresponde a un administrador:
             // esto es algo provisorio:
-            List<Persona> personas = new List<Persona>;
+            List<Persona> personas = new List<Persona>();
 
             string input_user = username_txtbox.Text;
             string input_password = password_txtbox.Text;
