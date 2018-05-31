@@ -14,7 +14,7 @@ namespace Biblio_app_windows_form
         
         public int Copia { get; set; }
 
-        public Libro(string MiCarreraAsociada, int MiCopia, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, Ubicacion[] MiUbicacion, string MiTitulo)
+        public Libro(string MiCarreraAsociada, int MiCopia, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, Ubicacion MiUbicacion, string MiTitulo)
             : base(MiAutor, MiFechaCreacion, MiCalificacion, MiComentario, MiCarreraAsociada, MiUbicacion)
         {
             
