@@ -20,18 +20,18 @@ namespace Biblio_app_windows_form
         inicio_sesion i_s;
         Libro libro;
 
-        public Controller(vista_administrador vista_Administrador, vista_alumno vista_Alumno, inicio_sesion i_s)
+        public Controller(vista_administrador mi_vista_Administrador, vista_alumno mi_vista_Alumno, inicio_sesion mi_i_s)
         {
             Usuario = new List<Alumno>();
             Admin = new List<Administrador>();
             Libros = new List<Libro>();
-            this.vista_Administrador = vista_Administrador;
-            this.vista_Administrador.OnAgregarUsuario += Vista_Administrador_OnAgregarUsuario;
+            vista_Administrador = mi_vista_Administrador;
+            vista_Administrador.OnAgregarUsuario += Vista_Administrador_OnAgregarUsuario;
             this.vista_Administrador.OnAgregarLibro += Vista_Administrador_OnAgregarLibro;
-            this.vista_Alumno = vista_Alumno;
-            this.vista_Alumno.OnArrendar += Vista_Alumno_OnArrendar;
-            this.i_s = i_s;
-            this.i_s.OnInicio += i_s_OnInicio;
+            vista_Alumno = mi_vista_Alumno;
+            vista_Alumno.OnArrendar += Vista_Alumno_OnArrendar;
+            i_s = mi_i_s;
+            i_s.OnInicio += i_s_OnInicio;
         }
 
         private void i_s_OnInicio(object sender, InicioEventArgs e)

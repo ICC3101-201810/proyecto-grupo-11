@@ -30,6 +30,8 @@ namespace Biblio_app_windows_form
         public vista_alumno()
         {
             InitializeComponent();
+            tipo_usuario_label.Text = "Alumno";
+            nombre_usuario_label.Text = "Prueba";
             
         }
 
@@ -62,7 +64,40 @@ namespace Biblio_app_windows_form
         private void buscar_btn_Click(object sender, EventArgs e)
         {
             string busqueda = busqueda_txtbox.Text;
+            // Desde aqui es para probar:
+            List<Libro> libros = new List<Libro>(); // temporal, después hay que ver como pasarle la lista filtrada
+            List<string> palabras = new List<string> { "muy bueno", "espectacular" };
+            Ubicacion tercer_piso = new Ubicacion("norte", 3, 5, 2);
+            Libro baldor = new Libro("Ingenieria", 3, "Al Juarismi", "1986", 8, palabras, tercer_piso, "Baldor. Algebra");
+            libros.Add(baldor);
+            // hasta aqui es de prueba
+
+            // Se revisan los libros segun el criterio de busqueda:
             string filtro = filtro_cbbox.Text;
+            List<Libro> libros_a_mostrar = new List<Libro>();
+            List<Libro> libros_a_mostrar_primero = new List<Libro>();
+            List<Libro> libros_a_mostrar_ultimo = new List<Libro>();
+
+            foreach (Libro lib in libros)
+            {
+                if (lib.Titulos == filtro)
+                {
+                    libros_a_mostrar_primero.Add(lib);
+                }
+                else
+                    libros_a_mostrar_ultimo.Add(lib);
+            }
+
+            foreach (Libro lib in libros_a_mostrar_primero)
+            {
+                libros_a_mostrar.Add(lib);
+            }
+            foreach (Libro lib in libros_a_mostrar_ultimo)
+            {
+                libros_a_mostrar.Add(lib);
+            }
+
+            vista_busqueda vista_Busqueda = new vista_busqueda(busqueda, libros_a_mostrar);
             //abrir ventana de resultados de busqueda
         }
 
@@ -92,7 +127,5 @@ namespace Biblio_app_windows_form
                 MessageBox.Show("Arriendo exitoso");
             }
         }
-
-        
     }
 }
