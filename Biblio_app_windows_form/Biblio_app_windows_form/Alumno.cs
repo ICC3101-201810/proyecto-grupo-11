@@ -41,5 +41,7 @@ namespace Biblio_app_windows_form
                 Usuario = value;
             }
         }
+
+       
     }
 }

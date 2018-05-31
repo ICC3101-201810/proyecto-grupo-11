@@ -42,8 +42,8 @@ namespace Biblio_app_windows_form
                         string tipo_string = current.GetType().ToString();
                         if (tipo_string == "Administrador")
                         {
-                            vista_administrador vista = new vista_administrador();
                             vista_alumno vista2 = new vista_alumno();
+                            vista_administrador vista = new vista_administrador(vista2);
                             inicio_sesion i_s = new inicio_sesion();
                             Controller controlador = new Controller(vista, vista2, i_s);
                             vista.Show();
@@ -52,11 +52,12 @@ namespace Biblio_app_windows_form
                         if (tipo_string == "Alumno")
                         {
 
-                            vista_administrador vista = new vista_administrador();
                             vista_alumno vista2 = new vista_alumno();
+                            vista_administrador vista = new vista_administrador(vista2);
                             inicio_sesion i_s = new inicio_sesion();
                             Controller controlador = new Controller(vista, vista2, i_s);
                             vista2.Show();
+                            
                             this.Hide();
                         }
 
@@ -68,14 +69,25 @@ namespace Biblio_app_windows_form
             if (username_txtbox.Text == "alumno")
             {
                 
-                vista_administrador vista = new vista_administrador();
                 vista_alumno vista2 = new vista_alumno();
+                vista_administrador vista = new vista_administrador(vista2);
                 inicio_sesion i_s = new inicio_sesion();
                 Controller controlador = new Controller(vista, vista2, i_s);
                 vista2.Show();
                 this.Hide();
             }
-            
+
+            if (username_txtbox.Text == "admin")
+            {
+
+                vista_alumno vista2 = new vista_alumno();
+                vista_administrador vista = new vista_administrador(vista2);
+                inicio_sesion i_s = new inicio_sesion();
+                Controller controlador = new Controller(vista, vista2, i_s);
+                vista.Show();
+                this.Hide();
+            }
+
 
         }
 

@@ -14,13 +14,16 @@ namespace Biblio_app_windows_form
     {
         public vista_busqueda(string mi_busqueda, List<Libro> mi_libros)
         {
-            busqueda_txtbox.Text = mi_busqueda;
-            foreach (Libro libro in mi_libros)
+            if (busqueda_txtbox != null)
             {
-                resultados_listbox.Items.Add(libro);
+                busqueda_txtbox.Text = mi_busqueda;
+                foreach (Libro libro in mi_libros)
+                {
+                    resultados_listbox.Items.Add(libro);
+                }
+
+                InitializeComponent();
             }
-            
-            InitializeComponent();
         }
 
         private void arrendar_btn_Click(object sender, EventArgs e)
