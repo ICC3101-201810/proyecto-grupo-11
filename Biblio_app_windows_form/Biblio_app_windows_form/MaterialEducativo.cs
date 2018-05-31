@@ -13,9 +13,9 @@ namespace Biblio_app_windows_form
         int Calificacion;
         List<string> Comentario;
         string CarreraAsociada;
-        Ubicacion[] Ubicacion;
+        Ubicacion Ubicacion;
 
-        public MaterialEducativo(string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarreraAsociada, Ubicacion[] MiUbicacion)
+        public MaterialEducativo(string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarreraAsociada, Ubicacion MiUbicacion)
         {
             Autor = MiAutor;
             FechaCreacion = MiFechaCreacion;
@@ -25,7 +25,7 @@ namespace Biblio_app_windows_form
             Ubicacion = MiUbicacion;
         }
 
-        public Ubicacion[] GetUbicacion()
+        public Ubicacion GetUbicacion()
         {
             return Ubicacion;
         }

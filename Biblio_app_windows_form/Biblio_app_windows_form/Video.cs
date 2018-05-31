@@ -10,7 +10,7 @@ namespace Biblio_app_windows_form
     {
         int Stock;
 
-        public Video(int MiStock, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarrecaAsociada, Ubicacion[] MiUbicacion)
+        public Video(int MiStock, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarrecaAsociada, Ubicacion MiUbicacion)
             : base(MiAutor, MiFechaCreacion, MiCalificacion, MiComentario, MiCarrecaAsociada, MiUbicacion)
         {
             Stock = MiStock;
@@ -20,28 +20,10 @@ namespace Biblio_app_windows_form
         {
             string resultado = "";
 
-            foreach (Ubicacion a in GetUbicacion())
-            {
-                if (GetUbicacion()[0] == a)
-                {
-                    resultado += "Sector: " + a + "\n";
-                }
-
-                else if (GetUbicacion()[1] == a)
-                {
-                    resultado += "Piso: " + a + "\n";
-                }
-
-                else if (GetUbicacion()[2] == a)
-                {
-                    resultado += "Librero: " + a + "\n";
-                }
-
-                else if (GetUbicacion()[3] == a)
-                {
-                    resultado += "Estante: " + a + "\n";
-                }
-            }
+            resultado += "Sector: " + GetUbicacion().Sector + "\n";
+            resultado += "Piso: " + GetUbicacion().Piso + "\n";
+            resultado += "Librero: " + GetUbicacion().Librero + "\n";
+            resultado += "Estante: " + GetUbicacion().Estante + "\n";
 
             return resultado;
         }

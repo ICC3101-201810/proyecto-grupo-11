@@ -33,3 +33,4 @@ C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio
 C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.exe
 C:\Users\GAMER\Documents\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.pdb
 C:\Users\sfigu\Desktop\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.vista_busqueda.resources
+C:\Users\joaqu\OneDrive\Documentos\GitHub\proyecto-grupo-11\Biblio_app_windows_form\Biblio_app_windows_form\obj\Debug\Biblio_app_windows_form.vista_busqueda.resources

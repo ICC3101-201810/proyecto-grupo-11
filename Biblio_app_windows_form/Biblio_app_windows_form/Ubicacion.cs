@@ -8,10 +8,10 @@ namespace Biblio_app_windows_form
 {
     public class Ubicacion
     {
-        string Sector;
-        int Piso;
-        int Librero;
-        int Estante;
+        internal string Sector { get; set; }
+        internal int Piso { get; set; }
+        internal int Librero { get; set; }
+        internal int Estante { get; set; }
 
         public Ubicacion(string MiSector, int MiPiso, int MiLibrero, int MiEstante)
         {

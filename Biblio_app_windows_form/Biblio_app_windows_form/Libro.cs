@@ -14,7 +14,7 @@ namespace Biblio_app_windows_form
         
         public int Copia { get; set; }
 
-        public Libro(string MiCarreraAsociada, int MiCopia, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, Ubicacion[] MiUbicacion, string MiTitulo)
+        public Libro(string MiCarreraAsociada, int MiCopia, string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, Ubicacion MiUbicacion, string MiTitulo)
             : base(MiAutor, MiFechaCreacion, MiCalificacion, MiComentario, MiCarreraAsociada, MiUbicacion)
         {
             
@@ -26,28 +26,10 @@ namespace Biblio_app_windows_form
         {
             string resultado = "";
 
-            foreach (Ubicacion a in GetUbicacion())
-            {
-                if (GetUbicacion()[0] == a)
-                {
-                    resultado += "Sector: " + a + "\n";
-                }
-
-                else if (GetUbicacion()[1] == a)
-                {
-                    resultado += "Piso: " + a.ToString() + "\n";
-                }
-
-                else if (GetUbicacion()[2] == a)
-                {
-                    resultado += "Librero: " + a.ToString() + "\n";
-                }
-
-                else if (GetUbicacion()[3] == a)
-                {
-                    resultado += "Estante: " + a.ToString() + "\n";
-                }
-            }
+            resultado += "Sector: " + GetUbicacion().Sector + "\n";
+            resultado += "Piso: " + GetUbicacion().Piso + "\n";
+            resultado += "Librero: " + GetUbicacion().Librero + "\n";
+            resultado += "Estante: " + GetUbicacion().Estante + "\n";
 
             return resultado;
         }
