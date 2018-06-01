@@ -32,6 +32,7 @@ namespace Biblio_app_windows_form
 
         public vista_alumno()
         {
+            
             InitializeComponent();
             tipo_usuario_label.Text = "Alumno";
             nombre_usuario_label.Text = "Prueba";
@@ -67,12 +68,14 @@ namespace Biblio_app_windows_form
             {
 
             }
+
+
             foreach (Arriendo a in arriendos)
             {
-                if (a.alumno.GetSesion() == true)
+                if (a.alumno.sesion == true)
                 {
                     
-                    for (int i = 0; i < a.libro.Count(); i++)
+                    for (int i = 0; i < a.libro.Count; i++)
                     {
                         this.dataGridView1.Rows.Add();
                         this.dataGridView1.Rows[i].Cells[0].Value = a.libro[i].Titulos;
@@ -133,6 +136,8 @@ namespace Biblio_app_windows_form
             libros.Add(quimica);*/
             // hasta aqui es de prueba
             #endregion
+
+
 
             List<Libro> libros = null;
             try
@@ -296,6 +301,19 @@ namespace Biblio_app_windows_form
                 IFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(stream, alumnos);
                 stream.Close();
+            }
+
+            foreach (Arriendo ar in arriendos)
+            {
+                ar.alumno.sesion = false;
+            }
+
+            using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, arriendos);
+                stream.Close();
+
             }
             string busqueda = " ";
             vista_busqueda vista3 = new vista_busqueda(busqueda, libros);

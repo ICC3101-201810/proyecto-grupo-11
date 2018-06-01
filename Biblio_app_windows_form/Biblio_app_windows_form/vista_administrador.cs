@@ -95,6 +95,19 @@ namespace Biblio_app_windows_form
                 formatter.Serialize(stream, alumnos);
                 stream.Close();
             }
+
+            foreach (Arriendo ar in arriendos)
+            {
+                ar.alumno.sesion = false;
+            }
+
+            using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, arriendos);
+                stream.Close();
+
+            }
             string busqueda = " ";
             vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
             Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);

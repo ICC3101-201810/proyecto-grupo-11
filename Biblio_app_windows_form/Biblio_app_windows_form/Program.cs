@@ -122,6 +122,33 @@ namespace Biblio_app_windows_form
             {
 
             }
+            foreach (Alumno a in alumnos)
+            {
+                if (a.sesion == true)
+                {
+                    a.sesion = false;
+                }
+
+            }
+            using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, alumnos);
+                stream.Close();
+            }
+
+            foreach(Arriendo ar in arriendos)
+            {
+                ar.alumno.sesion = false;
+            }
+
+            using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, arriendos);
+                stream.Close();
+
+            }
 
             vista_alumno vista2 = new vista_alumno();
             vista_administrador vista = new vista_administrador(vista2);

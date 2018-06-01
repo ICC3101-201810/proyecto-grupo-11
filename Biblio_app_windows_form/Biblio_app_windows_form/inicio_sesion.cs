@@ -101,11 +101,19 @@ namespace Biblio_app_windows_form
                         }*/
 
                         alumnos[alumno].sesion = true;
+                        arriendos[alumno].alumno.sesion = true;
                         using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
                         {
                             IFormatter formatter = new BinaryFormatter();
                             formatter.Serialize(stream, alumnos);
                             stream.Close();
+                        }
+                        using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                        {
+                            IFormatter formatter = new BinaryFormatter();
+                            formatter.Serialize(stream, arriendos);
+                            stream.Close();
+
                         }
                         vista_alumno vista2 = new vista_alumno();
                         vista_administrador vista = new vista_administrador(vista2);
