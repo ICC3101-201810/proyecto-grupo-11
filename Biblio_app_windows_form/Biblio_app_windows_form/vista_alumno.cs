@@ -35,7 +35,24 @@ namespace Biblio_app_windows_form
             InitializeComponent();
             tipo_usuario_label.Text = "Alumno";
             nombre_usuario_label.Text = "Prueba";
-            filtro_cbbox.Text = "Titulo";           
+            filtro_cbbox.Text = "Titulo";
+            List<Libro> libros = null;
+            try
+            {
+                using (Stream stream = new FileStream("Libros.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    libros = (List<Libro>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            foreach(Libro l in libros)
+            {
+                seleccionar_libro_cbbox.Items.Add(l.Titulos+", "+l.GetAutor()+", "+l.Copias+" copias disponibles");
+            }
         }
 
         private void devolver_btn_Click(object sender, EventArgs e)
