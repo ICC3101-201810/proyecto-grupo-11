@@ -55,6 +55,7 @@ namespace Biblio_app_windows_form
                         }
                     }
                     a.libro.RemoveAt(e.row);
+                    a.FechaArriendo.RemoveAt(e.row);
                     using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
                     {
                         IFormatter formatter = new BinaryFormatter();

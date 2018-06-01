@@ -23,16 +23,16 @@ namespace Biblio_app_windows_form
             Application.SetCompatibleTextRenderingDefault(false);
 
             #region "Primeros Alumnos"
-            /*var objAlumno = new List<Alumno>();
-            objAlumno.Add(new Alumno(0, new List<string>(), "Joaquin", "Tellez", "19079901-8", "jatellez", "joaquin"));
-            objAlumno.Add(new Alumno(0, new List<string>(), "Santiago", "Figueroa", "19990164-4", "sfigueroa", "santiago"));
-            objAlumno.Add(new Alumno(0, new List<string>(), "Nicolas", "Apara", "19006158-7", "napara", "nicolas"));
-            objAlumno.Add(new Alumno(0, new List<string>(), "Alfonso", "Zuñiga", "19747589-6", "azuñiga", "alfonso"));
+            /*var alumnos = new List<Alumno>();
+            alumnos.Add(new Alumno(0, new List<string>(), "Joaquin", "Tellez", "19079901-8", "jatellez", "joaquin"));
+            alumnos.Add(new Alumno(0, new List<string>(), "Santiago", "Figueroa", "19990164-4", "sfigueroa", "santiago"));
+            alumnos.Add(new Alumno(0, new List<string>(), "Nicolas", "Apara", "19006158-7", "napara", "nicolas"));
+            alumnos.Add(new Alumno(0, new List<string>(), "Alfonso", "Zuñiga", "19747589-6", "azuñiga", "alfonso"));
 
             using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 IFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(stream, objAlumno);
+                formatter.Serialize(stream, alumnos);
                 stream.Close();
 
             }*/
