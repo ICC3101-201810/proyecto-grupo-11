@@ -20,14 +20,13 @@ namespace Biblio_app_windows_form
         
         private void ArrendarLibroButton_Click(object sender, EventArgs e)
         {
-            ArrendarLibroEventArgs arriendo = new ArrendarLibroEventArgs();
-            arriendo.titulo = this.seleccionar_libro_cbbox.Text;
+            
         }
 
         public void ActualizarLibros(string nuevoLibro)
         {
             
-            seleccionar_libro_cbbox.Items.Add(nuevoLibro);
+            
             
         }
 
@@ -52,10 +51,7 @@ namespace Biblio_app_windows_form
             {
 
             }
-            foreach(Libro l in libros)
-            {
-                seleccionar_libro_cbbox.Items.Add(l.Titulos+", "+l.GetAutor()+", "+l.Copias+" copias disponibles");
-            }
+            
             List<Arriendo> arriendos = null;
             try
             {
@@ -82,8 +78,8 @@ namespace Biblio_app_windows_form
                         this.dataGridView1.Rows[i].Cells[0].Value = a.libro[i].Titulos;
                         this.dataGridView1.Rows[i].Cells[1].Value = a.libro[i].GetAutor();
                         this.dataGridView1.Rows[i].Cells[2].Value = a.FechaArriendo[i].ToString();
-                        this.dataGridView1.Rows[i].Cells[3].Value = a.FechaArriendo[i].AddDays(7).ToString();
-                        if(DateTime.Now < a.FechaArriendo[i].AddDays(7))
+                        this.dataGridView1.Rows[i].Cells[3].Value = a.FechaArriendo[i].AddSeconds(1).ToString();
+                        if(DateTime.Now < a.FechaArriendo[i].AddSeconds(1))
                         {
                             this.dataGridView1.Rows[i].Cells[4].Value = "En Plazo";
                         }
@@ -94,6 +90,25 @@ namespace Biblio_app_windows_form
                     }
                 }
             }
+            int debt = 0;
+            foreach (Arriendo a in arriendos)
+            {
+                if (a.alumno.sesion == true)
+                {
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        if (DateTime.Now > a.FechaArriendo[i].AddSeconds(1))
+                        {
+                            debt += Convert.ToInt32((DateTime.Now - a.FechaArriendo[i].AddSeconds(1)).TotalSeconds);
+                        }
+                        else
+                        {
+                            debt += 0;
+                        }
+                    }
+                }
+            }
+            label5.Text = debt.ToString();
         }
 
         private void devolver_btn_Click(object sender, EventArgs e)
@@ -341,10 +356,7 @@ namespace Biblio_app_windows_form
         {
             if (OnArrendar != null)
             {
-                ArrendarLibroEventArgs arriendo = new ArrendarLibroEventArgs();
-                arriendo.titulo = this.seleccionar_libro_cbbox.Text;
-                OnArrendar(this, arriendo);
-                MessageBox.Show("Arriendo exitoso");
+                
             }
         }
         private void salir_btn_Click(object sender, EventArgs e)

@@ -19,8 +19,7 @@ namespace Biblio_app_windows_form
         vista_administrador vista_Administrador;
         vista_alumno vista_Alumno;
         inicio_sesion i_s;
-        vista_busqueda vista_Busqueda;
-        Libro libro;
+        vista_busqueda vista_Busqueda;       
 
         public Controller(vista_administrador mi_vista_Administrador, vista_alumno mi_vista_Alumno, inicio_sesion mi_i_s, List<Alumno> Misalumnos, List<Libro> Mislibros, List<Arriendo> MisArriendos, vista_busqueda Mi_vista_Busqueda)
         {

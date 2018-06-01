@@ -36,7 +36,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.seleccionar_libro_cbbox = new System.Windows.Forms.ComboBox();
             this.devolver_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.deuda_txtbox = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.fecha_arr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aviso_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,18 +132,9 @@
             this.label3.Location = new System.Drawing.Point(21, 438);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 17);
+            this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Seleccionar libro";
-            // 
-            // seleccionar_libro_cbbox
-            // 
-            this.seleccionar_libro_cbbox.FormattingEnabled = true;
-            this.seleccionar_libro_cbbox.Location = new System.Drawing.Point(143, 434);
-            this.seleccionar_libro_cbbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.seleccionar_libro_cbbox.Name = "seleccionar_libro_cbbox";
-            this.seleccionar_libro_cbbox.Size = new System.Drawing.Size(208, 24);
-            this.seleccionar_libro_cbbox.TabIndex = 7;
+            this.label3.Text = "Deuda Actual :";
             // 
             // devolver_btn
             // 
@@ -159,12 +150,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(81, 476);
+            this.label4.Location = new System.Drawing.Point(21, 475);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 17);
+            this.label4.Size = new System.Drawing.Size(101, 17);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Deuda";
+            this.label4.Text = "Monto a Pagar";
             // 
             // deuda_txtbox
             // 
@@ -269,11 +260,21 @@
             this.aviso_estado.Name = "aviso_estado";
             this.aviso_estado.ReadOnly = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(138, 438);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "label5";
+            // 
             // vista_alumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 522);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.nombre_usuario_label);
             this.Controls.Add(this.tipo_usuario_label);
             this.Controls.Add(this.cerrar_sesion_btn);
@@ -283,7 +284,6 @@
             this.Controls.Add(this.deuda_txtbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.devolver_btn);
-            this.Controls.Add(this.seleccionar_libro_cbbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
@@ -312,7 +312,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox seleccionar_libro_cbbox;
         private System.Windows.Forms.Button devolver_btn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox deuda_txtbox;
@@ -327,5 +326,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_arr;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_dev;
         private System.Windows.Forms.DataGridViewTextBoxColumn aviso_estado;
+        private System.Windows.Forms.Label label5;
     }
 }
