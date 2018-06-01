@@ -16,6 +16,7 @@ namespace Biblio_app_windows_form
     public partial class vista_alumno : Form
     {
         public event EventHandler<ArrendarLibroEventArgs> OnArrendar;
+        public event EventHandler<DevolverLibroEventArgs> OnDevolver;
         
         private void ArrendarLibroButton_Click(object sender, EventArgs e)
         {
@@ -97,9 +98,16 @@ namespace Biblio_app_windows_form
 
         private void devolver_btn_Click(object sender, EventArgs e)
         {
-            // revisar la deuda, aunque el boton deberia estar inactivo si el usuario no selecciona pagar
-            // devolver el libro
-            // quitar de la lista de libros arrendados
+            if(dataGridView1.CurrentCell != null)
+            {
+                DevolverLibroEventArgs devolucion = new DevolverLibroEventArgs();
+                devolucion.row = dataGridView1.CurrentCell.RowIndex;
+                devolucion.titulo = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                devolucion.autor = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                OnDevolver(this, devolucion);
+                MessageBox.Show("Libro Devuelto");
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+            }
         }
 
         private void pagar_deuda_chkbox_CheckedChanged(object sender, EventArgs e)

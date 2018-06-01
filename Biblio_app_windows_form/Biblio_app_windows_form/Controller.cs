@@ -14,7 +14,7 @@ namespace Biblio_app_windows_form
     {
         List<Alumno> User;
         List<Administrador> Admin;
-        List<Libro> Libros { get; set; }
+        List<Libro> Libros;
         List<Arriendo> Arriendos;
         vista_administrador vista_Administrador;
         vista_alumno vista_Alumno;
@@ -33,10 +33,46 @@ namespace Biblio_app_windows_form
             this.vista_Administrador.OnAgregarLibro += Vista_Administrador_OnAgregarLibro;
             vista_Alumno = mi_vista_Alumno;
             vista_Alumno.OnArrendar += Vista_Alumno_OnArrendar;
+            vista_Alumno.OnDevolver += Vista_Alumno_OnDevolver;
             i_s = mi_i_s;
             i_s.OnInicio += i_s_OnInicio;
             vista_Busqueda = Mi_vista_Busqueda;
             vista_Busqueda.OnArrendar += Vista_Busqueda_OnArrendar;
+        }
+
+        private void Vista_Alumno_OnDevolver(object sender, DevolverLibroEventArgs e)
+        {
+            foreach(Arriendo a in Arriendos)
+            {
+                if(a.alumno.sesion == true)
+                {
+                    a.libro[e.row].Copia++;
+                    foreach(Libro l in Libros)
+                    {
+                        if(l.Titulos == e.titulo && l.GetAutor() == e.autor)
+                        {
+                            l.Copia++;
+                            break;
+                        }
+                    }
+                    a.libro.RemoveAt(e.row);
+                    using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                    {
+                        IFormatter formatter = new BinaryFormatter();
+                        formatter.Serialize(stream, Arriendos);
+                        stream.Close();
+
+                    }
+                    using (Stream stream = new FileStream("Libros.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                    {
+                        IFormatter formatter = new BinaryFormatter();
+                        formatter.Serialize(stream, Libros);
+                        stream.Close();
+
+                    }
+                    break;
+                }
+            }
         }
 
         private void Vista_Busqueda_OnArrendar(object sender, ArrendarLibroEventArgs e)

@@ -51,7 +51,7 @@
     <Compile Include="Alumno.cs" />
     <Compile Include="ArrendarLibroEventArgs.cs" />
     <Compile Include="Arriendo.cs" />
-    <Compile Include="IController.cs" />
+    <Compile Include="DevolverLibroEventArgs.cs" />
     <Compile Include="InicioEventArgs.cs" />
     <Compile Include="inicio_sesion.cs">
       <SubType>Form</SubType>
