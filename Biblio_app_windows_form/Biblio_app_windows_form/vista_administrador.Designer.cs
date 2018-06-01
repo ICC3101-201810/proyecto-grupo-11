@@ -63,7 +63,7 @@
             // 
             // agregar_libro_btn
             // 
-            this.agregar_libro_btn.Location = new System.Drawing.Point(297, 162);
+            this.agregar_libro_btn.Location = new System.Drawing.Point(296, 139);
             this.agregar_libro_btn.Name = "agregar_libro_btn";
             this.agregar_libro_btn.Size = new System.Drawing.Size(75, 48);
             this.agregar_libro_btn.TabIndex = 0;
@@ -301,7 +301,7 @@
             // CarreraAsociada_txtBox
             // 
             this.CarreraAsociada_txtBox.Location = new System.Drawing.Point(134, 114);
-            this.CarreraAsociada_txtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CarreraAsociada_txtBox.Margin = new System.Windows.Forms.Padding(2);
             this.CarreraAsociada_txtBox.Name = "CarreraAsociada_txtBox";
             this.CarreraAsociada_txtBox.Size = new System.Drawing.Size(237, 20);
             this.CarreraAsociada_txtBox.TabIndex = 29;
