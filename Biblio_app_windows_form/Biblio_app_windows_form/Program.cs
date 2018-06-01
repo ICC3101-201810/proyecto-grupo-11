@@ -19,8 +19,8 @@ namespace Biblio_app_windows_form
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            vista_administrador vista = new vista_administrador();
             vista_alumno vista2 = new vista_alumno();
+            vista_administrador vista = new vista_administrador(vista2);
             inicio_sesion i_s = new inicio_sesion();
             
             Controller controlador = new Controller(vista, vista2, i_s);

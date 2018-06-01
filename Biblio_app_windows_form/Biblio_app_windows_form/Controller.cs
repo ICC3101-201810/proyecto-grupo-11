@@ -12,9 +12,9 @@ namespace Biblio_app_windows_form
     [Serializable()]
     class Controller
     {
-        List<Alumno> Usuario;
+        List<Alumno> User;
         List<Administrador> Admin;
-        public List<Libro> Libros { get; set; }
+        List<Libro> Libros { get; set; }
         vista_administrador vista_Administrador;
         vista_alumno vista_Alumno;
         inicio_sesion i_s;
@@ -22,7 +22,7 @@ namespace Biblio_app_windows_form
 
         public Controller(vista_administrador mi_vista_Administrador, vista_alumno mi_vista_Alumno, inicio_sesion mi_i_s)
         {
-            Usuario = new List<Alumno>();
+            User = new List<Alumno>();
             Admin = new List<Administrador>();
             Libros = new List<Libro>();
             vista_Administrador = mi_vista_Administrador;
@@ -53,7 +53,7 @@ namespace Biblio_app_windows_form
         private void Vista_Administrador_OnAgregarUsuario(object sender, AgregarUsuarioEventArgs e)
         {
             Alumno alumno = new Alumno(0, new List<string>(), e.Nombre, e.Apellido, e.Rut, e.Usuario, e.Password);
-            Usuario.Add(alumno);
+            User.Add(alumno);
             
     
             /*IFormatter formatter = new BinaryFormatter();

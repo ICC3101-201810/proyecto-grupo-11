@@ -14,11 +14,12 @@ namespace Biblio_app_windows_form
     {
         public event EventHandler<AgregarUsuarioEventArgs> OnAgregarUsuario;
         public event EventHandler<AgregarLibroEventArgs> OnAgregarLibro;
-        
 
-        public vista_administrador()
+        private vista_alumno mainForm = null;
+
+        public vista_administrador(Form callingForm)
         {
-            
+            mainForm = callingForm as vista_alumno;
             InitializeComponent();
 
         }
@@ -30,10 +31,11 @@ namespace Biblio_app_windows_form
 
         private void cerrar_sesion_btn_Click(object sender, EventArgs e)
         {
-            vista_administrador vista = new vista_administrador();
             vista_alumno vista2 = new vista_alumno();
+            vista_administrador vista = new vista_administrador(vista2);
             inicio_sesion i_s = new inicio_sesion();
             Controller controlador = new Controller(vista, vista2, i_s);
+            
             i_s.Show();
             this.Close();
         }
@@ -65,7 +67,7 @@ namespace Biblio_app_windows_form
                 libroArgs.CarreraAsociada = this.CarreraAsociada_txtBox.Text;
                 libroArgs.FechaCreacion = this.fecha_pub_txtbox.Text;
                 OnAgregarLibro(this, libroArgs);
-                
+                this.mainForm.ActualizarLibros(this.titulo_txtbox.Text);
                 MessageBox.Show("Libro agregado con éxito!");
             }
         }
@@ -82,6 +84,7 @@ namespace Biblio_app_windows_form
                 usuarioArgs.Password = this.new_password_txtbox.Text;
                 OnAgregarUsuario(this, usuarioArgs);
                 MessageBox.Show("Usuario creado con éxito!");
+                
             }
         }
 

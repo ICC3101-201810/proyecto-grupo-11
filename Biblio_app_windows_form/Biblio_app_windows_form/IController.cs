@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
 {
-    public class InicioEventArgs : EventArgs
+    interface IController
     {
-        public string usuario { get; set; }
-        public string password { get; set; }
+
     }
 }

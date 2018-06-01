@@ -22,9 +22,11 @@ namespace Biblio_app_windows_form
             arriendo.titulo = this.seleccionar_libro_cbbox.Text;
         }
 
-        public void ActualizarLibros(Libro nuevoLibro)
+        public void ActualizarLibros(string nuevoLibro)
         {
+            
             seleccionar_libro_cbbox.Items.Add(nuevoLibro);
+            
         }
 
         public vista_alumno()
@@ -103,8 +105,17 @@ namespace Biblio_app_windows_form
 
         private void cerrar_sesion_btn_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             inicio_sesion i_s = new inicio_sesion();
             i_s.Show();
+=======
+            vista_alumno vista2 = new vista_alumno();
+            vista_administrador vista = new vista_administrador(vista2);
+            inicio_sesion i_s = new inicio_sesion();
+            Controller controlador = new Controller(vista, vista2, i_s);
+            i_s.abrir_inicio();
+            //i_s.Show();
+>>>>>>> d82aa4533b8cf7a3d6d7f0a99b9c0dbc0c9e3a73
             this.Close();
             //abrir_inicio();
         }
