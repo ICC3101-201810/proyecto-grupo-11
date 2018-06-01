@@ -56,9 +56,9 @@
             // 
             // buscar_btn
             // 
-            this.buscar_btn.Location = new System.Drawing.Point(480, 79);
+            this.buscar_btn.Location = new System.Drawing.Point(479, 78);
             this.buscar_btn.Name = "buscar_btn";
-            this.buscar_btn.Size = new System.Drawing.Size(75, 23);
+            this.buscar_btn.Size = new System.Drawing.Size(75, 22);
             this.buscar_btn.TabIndex = 0;
             this.buscar_btn.Text = "Buscar";
             this.buscar_btn.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             "Titulo",
             "Autor",
             "Id",
-            "Materia"});
+            "Carrera"});
             this.filtro_cbbox.Location = new System.Drawing.Point(91, 79);
             this.filtro_cbbox.Name = "filtro_cbbox";
             this.filtro_cbbox.Size = new System.Drawing.Size(121, 21);
@@ -199,7 +199,7 @@
             this.renovar_btn.Name = "renovar_btn";
             this.renovar_btn.Size = new System.Drawing.Size(75, 23);
             this.renovar_btn.TabIndex = 12;
-            this.renovar_btn.Text = "Arrendar";
+            this.renovar_btn.Text = "Renovar";
             this.renovar_btn.UseVisualStyleBackColor = true;
             this.renovar_btn.Click += new System.EventHandler(this.renovar_btn_Click);
             // 

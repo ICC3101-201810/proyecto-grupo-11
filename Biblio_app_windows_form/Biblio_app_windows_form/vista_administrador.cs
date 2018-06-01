@@ -66,11 +66,6 @@ namespace Biblio_app_windows_form
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void agregar_libro_btn_Click(object sender, EventArgs e)
         {
             if (OnAgregarLibro != null)

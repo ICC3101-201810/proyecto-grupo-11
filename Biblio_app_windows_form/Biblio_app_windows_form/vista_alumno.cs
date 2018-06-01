@@ -17,8 +17,6 @@ namespace Biblio_app_windows_form
     {
         public event EventHandler<ArrendarLibroEventArgs> OnArrendar;
         
-
-
         private void ArrendarLibroButton_Click(object sender, EventArgs e)
         {
             ArrendarLibroEventArgs arriendo = new ArrendarLibroEventArgs();
@@ -37,6 +35,7 @@ namespace Biblio_app_windows_form
             InitializeComponent();
             tipo_usuario_label.Text = "Alumno";
             nombre_usuario_label.Text = "Prueba";
+            filtro_cbbox.Text = "Titulo";
             
         }
 
@@ -61,38 +60,65 @@ namespace Biblio_app_windows_form
             }
         }
 
-        private void salir_btn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void buscar_btn_Click(object sender, EventArgs e)
         {
-            string busqueda = busqueda_txtbox.Text;
-            // Desde aqui es para probar:
+            // Desde aqui es para probar: Hay 3 libros, en distintas ubicaciones y con distintos comentarios
             List<Libro> libros = new List<Libro>(); // temporal, después hay que ver como pasarle la lista filtrada
             List<string> palabras = new List<string> { "muy bueno", "espectacular" };
             Ubicacion tercer_piso = new Ubicacion("norte", 3, 5, 2);
-            Libro baldor = new Libro("Ingenieria", 3, "Al Juarismi", "1986", 8, palabras, tercer_piso, "Baldor. Algebra");
+            Libro baldor = new Libro("Ingenieria", 3, "Al Juarismi", "1986", 8, palabras, tercer_piso, "Baldor. Álgebra");
             libros.Add(baldor);
+            List<string> palabras2 = new List<string> { "me gusto", "increible" };
+            Ubicacion segundo_piso = new Ubicacion("norte", 2, 10, 4);
+            Libro metafisica = new Libro("Derecho", 1, "Juan Antonio Widow", "1998", 8, palabras2, segundo_piso, "Curso de Metafísica");
+            libros.Add(metafisica);
+            List<string> palabras3 = new List<string> { "Buenos ejemplos", "sencillo" };
+            Ubicacion primer_piso = new Ubicacion("centro", 1, 2, 2);
+            Libro quimica = new Libro("Medicina", 5, "R Chi", "1978", 6, palabras3, primer_piso, "Fundamentos de la Química");
+            libros.Add(quimica);
             // hasta aqui es de prueba
 
             // Se revisan los libros segun el criterio de busqueda:
+            
+            string busqueda = busqueda_txtbox.Text;
             string filtro = filtro_cbbox.Text;
-            List<Libro> libros_a_mostrar = new List<Libro>();
-            List<Libro> libros_a_mostrar_primero = new List<Libro>();
-            List<Libro> libros_a_mostrar_ultimo = new List<Libro>();
+            List<Libro> libros_a_mostrar = new List<Libro>();// Lista completa con todos los libros
+            List<Libro> libros_a_mostrar_primero = new List<Libro>();// Lista con los resultados identicos
+            List<Libro> libros_a_mostrar_ultimo = new List<Libro>();// Lista con el resto de libros
 
             foreach (Libro lib in libros)
             {
-                if (lib.Titulos == filtro)
+                if (filtro == "Titulo")
                 {
-                    libros_a_mostrar_primero.Add(lib);
+                    if (lib.Titulos == busqueda)
+                    {
+                        libros_a_mostrar_primero.Add(lib);
+                    }
+                    else
+                        libros_a_mostrar_ultimo.Add(lib);
                 }
-                else
-                    libros_a_mostrar_ultimo.Add(lib);
+                if (filtro == "Autor")
+                {
+                    if (lib.GetAutor() == busqueda)
+                    {
+                        libros_a_mostrar_primero.Add(lib);
+                    }
+                    else
+                        libros_a_mostrar_ultimo.Add(lib);
+                }
+                /* // Falta libro.Carrera o libro.Materia
+                if (busqueda == "Carrera")
+                {
+                    if (lib.get == busqueda)
+                    {
+                        libros_a_mostrar_primero.Add(lib);
+                    }
+                    else
+                        libros_a_mostrar_ultimo.Add(lib);
+                }
+                */
             }
-
             foreach (Libro lib in libros_a_mostrar_primero)
             {
                 libros_a_mostrar.Add(lib);
@@ -101,8 +127,8 @@ namespace Biblio_app_windows_form
             {
                 libros_a_mostrar.Add(lib);
             }
-
             vista_busqueda vista_Busqueda = new vista_busqueda(busqueda, libros_a_mostrar);
+            vista_Busqueda.Show();
             //abrir ventana de resultados de busqueda
         }
 
@@ -145,6 +171,10 @@ namespace Biblio_app_windows_form
                 OnArrendar(this, arriendo);
                 MessageBox.Show("Arriendo exitoso");
             }
+        }
+        private void salir_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
