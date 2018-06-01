@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
 {
-    class Profesor : Persona
+    [Serializable]
+    public class Profesor : Persona
     {
         int Deuda;
         List<string> MaterialArrendado;

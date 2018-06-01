@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Runtime.Serialization;
 
 namespace Biblio_app_windows_form
 {
@@ -28,6 +31,19 @@ namespace Biblio_app_windows_form
 
             string input_user = username_txtbox.Text;
             string input_password = password_txtbox.Text;
+            List<Alumno> alumnos = null;
+            try
+            {
+                using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
             for (int alumno = 0; alumno < personas.Count; alumno++)
             {
                 Persona current = personas[alumno];
@@ -44,8 +60,8 @@ namespace Biblio_app_windows_form
                         {
                             vista_alumno vista2 = new vista_alumno();
                             vista_administrador vista = new vista_administrador(vista2);
-                            inicio_sesion i_s = new inicio_sesion();
-                            Controller controlador = new Controller(vista, vista2, i_s);
+                            inicio_sesion i_s = new inicio_sesion();                       
+                            Controller controlador = new Controller(vista, vista2, i_s, alumnos);
                             vista.Show();
                             this.Hide();
                         }
@@ -55,7 +71,7 @@ namespace Biblio_app_windows_form
                             vista_alumno vista2 = new vista_alumno();
                             vista_administrador vista = new vista_administrador(vista2);
                             inicio_sesion i_s = new inicio_sesion();
-                            Controller controlador = new Controller(vista, vista2, i_s);
+                            Controller controlador = new Controller(vista, vista2, i_s, alumnos);
                             vista2.Show();
                             
                             this.Hide();
@@ -72,7 +88,7 @@ namespace Biblio_app_windows_form
                 vista_alumno vista2 = new vista_alumno();
                 vista_administrador vista = new vista_administrador(vista2);
                 inicio_sesion i_s = new inicio_sesion();
-                Controller controlador = new Controller(vista, vista2, i_s);
+                Controller controlador = new Controller(vista, vista2, i_s, alumnos);
                 vista2.Show();
                 this.Hide();
             }
@@ -83,7 +99,7 @@ namespace Biblio_app_windows_form
                 vista_alumno vista2 = new vista_alumno();
                 vista_administrador vista = new vista_administrador(vista2);
                 inicio_sesion i_s = new inicio_sesion();
-                Controller controlador = new Controller(vista, vista2, i_s);
+                Controller controlador = new Controller(vista, vista2, i_s, alumnos);
                 vista.Show();
                 this.Hide();
             }

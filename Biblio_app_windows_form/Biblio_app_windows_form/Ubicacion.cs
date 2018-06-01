@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
 {
+    [Serializable]
     public class Ubicacion
     {
         internal string Sector { get; set; }

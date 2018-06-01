@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
 {
-    class Persona
+    [Serializable]
+    public class Persona
     {
         string Nombre;
         string Apellido;

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Runtime.Serialization;
 
 namespace Biblio_app_windows_form
 {
@@ -34,7 +37,20 @@ namespace Biblio_app_windows_form
             vista_alumno vista2 = new vista_alumno();
             vista_administrador vista = new vista_administrador(vista2);
             inicio_sesion i_s = new inicio_sesion();
-            Controller controlador = new Controller(vista, vista2, i_s);
+            List<Alumno> alumnos = null;
+            try
+            {
+                using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            Controller controlador = new Controller(vista, vista2, i_s, alumnos);
             
             i_s.Show();
             this.Close();

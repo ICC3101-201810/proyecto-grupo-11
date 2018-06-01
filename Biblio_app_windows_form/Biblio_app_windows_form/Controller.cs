@@ -20,9 +20,9 @@ namespace Biblio_app_windows_form
         inicio_sesion i_s;
         Libro libro;
 
-        public Controller(vista_administrador mi_vista_Administrador, vista_alumno mi_vista_Alumno, inicio_sesion mi_i_s)
+        public Controller(vista_administrador mi_vista_Administrador, vista_alumno mi_vista_Alumno, inicio_sesion mi_i_s,List<Alumno> alumnos)
         {
-            User = new List<Alumno>();
+            User = alumnos;
             Admin = new List<Administrador>();
             Libros = new List<Libro>();
             vista_Administrador = mi_vista_Administrador;

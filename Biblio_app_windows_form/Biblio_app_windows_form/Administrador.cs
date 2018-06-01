@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblio_app_windows_form
 {
-    class Administrador : Persona
+    [Serializable]
+    public class Administrador : Persona
     {
         public Administrador(string miNombre, string miApellido, string miRut, string miUsuario, string miPassword)
             : base(miNombre, miApellido, miRut, miUsuario, miPassword)
