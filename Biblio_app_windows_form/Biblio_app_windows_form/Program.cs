@@ -71,6 +71,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch(IOException)
@@ -84,6 +85,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     libros = (List<Libro>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -113,6 +115,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)

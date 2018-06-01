@@ -9,9 +9,9 @@ namespace Biblio_app_windows_form
     [Serializable]
     public class Arriendo
     {
-        List<DateTime> FechaArriendo;
-        Alumno alumno;
-        List<Libro> libro;
+        internal List<DateTime> FechaArriendo { get; set; }
+        internal Alumno alumno { get; set; }
+        internal List<Libro> libro { get; set; }
 
         public Arriendo(Alumno MiAlumno)
         {
@@ -19,5 +19,7 @@ namespace Biblio_app_windows_form
             alumno = MiAlumno;
             libro = new List<Libro>();
         }
+
+
     }
 }

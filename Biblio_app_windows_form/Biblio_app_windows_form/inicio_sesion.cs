@@ -40,6 +40,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -53,6 +54,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     libros = (List<Libro>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -66,6 +68,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -96,8 +99,14 @@ namespace Biblio_app_windows_form
                             vista.Show();
                             this.Hide();
                         }*/
-                        
 
+                        alumnos[alumno].sesion = true;
+                        using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                        {
+                            IFormatter formatter = new BinaryFormatter();
+                            formatter.Serialize(stream, alumnos);
+                            stream.Close();
+                        }
                         vista_alumno vista2 = new vista_alumno();
                         vista_administrador vista = new vista_administrador(vista2);
                         inicio_sesion i_s = new inicio_sesion();

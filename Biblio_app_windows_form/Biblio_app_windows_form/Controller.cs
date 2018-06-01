@@ -40,17 +40,39 @@ namespace Biblio_app_windows_form
         }
 
         private void Vista_Busqueda_OnArrendar(object sender, ArrendarLibroEventArgs e)
-        {
-            int i = 0;
+        {            
             foreach(Libro l in Libros)
             {
                 if (l.Titulos == e.titulo && l.Copia > 0 && l.GetAutor() == e.autor)
                 {
-                    l.Copia--;
+                    for(int i = 0; i < User.Count(); i++)
+                    {
+                        if(User[i].sesion == true && User[i].Deudas == 0)
+                        {
+                            Arriendos[i].libro.Add(l);
+                            Arriendos[i].FechaArriendo.Add(DateTime.Now);
+                            l.Copia--;
+                            using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                            {
+                                IFormatter formatter = new BinaryFormatter();
+                                formatter.Serialize(stream, Arriendos);
+                                stream.Close();
 
-                }
-                i++;
+                            }
+                            using (Stream stream = new FileStream("Libros.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                            {
+                                IFormatter formatter = new BinaryFormatter();
+                                formatter.Serialize(stream, Libros);
+                                stream.Close();
+
+                            }
+                            break;
+                        }
+                    }
+                }               
             }
+            
+
         }
 
         private void i_s_OnInicio(object sender, InicioEventArgs e)

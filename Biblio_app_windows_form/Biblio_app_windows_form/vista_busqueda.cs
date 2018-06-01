@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Biblio_app_windows_form
 {
@@ -29,23 +32,90 @@ namespace Biblio_app_windows_form
                 }
 
             }
+
         }
 
         private void arrendar_btn_Click(object sender, EventArgs e)
         {
             if(OnArrendar != null)
             {
-                ArrendarLibroEventArgs arriendo = new ArrendarLibroEventArgs();
-                arriendo.titulo = this.titulo_txtbox.Text;
-                arriendo.autor = this.autor_txtbox.Text;
-                arriendo.copia = Convert.ToInt32(this.copias_txtbox.Text);
-                OnArrendar(this, arriendo);
+                
+                ArrendarLibroEventArgs arriendoa = new ArrendarLibroEventArgs();
+                arriendoa.titulo = this.titulo_txtbox.Text;
+                arriendoa.autor = this.autor_txtbox.Text;
+                arriendoa.copia = Convert.ToInt32(this.copias_txtbox.Text);
+                OnArrendar(this, arriendoa);
                 MessageBox.Show("Arriendo Exitoso!");
             }
         }
 
         private void volver_btn_Click(object sender, EventArgs e)
         {
+            vista_alumno vista2 = new vista_alumno();
+            vista_administrador vista = new vista_administrador(vista2);
+            inicio_sesion i_s = new inicio_sesion();
+            List<Alumno> alumnos = null;
+            List<Libro> libros = null;
+            List<Arriendo> arriendos = null;
+            try
+            {
+                using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                    stream.Close();
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+
+            try
+            {
+                using (Stream stream = new FileStream("Libros.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    libros = (List<Libro>)formatter.Deserialize(stream);
+                    stream.Close();
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+
+            try
+            {
+                using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                    stream.Close();
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            foreach (Alumno a in alumnos)
+            {
+                if (a.sesion == true)
+                {
+                    a.sesion = false;
+                }
+
+            }
+            using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, alumnos);
+                stream.Close();
+            }
+            string busqueda = " ";
+            vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
+            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
+            vista2.Show();
             this.Close();
         }
 

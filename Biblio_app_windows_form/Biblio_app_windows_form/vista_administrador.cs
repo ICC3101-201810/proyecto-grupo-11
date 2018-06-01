@@ -46,6 +46,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -59,6 +60,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     libros = (List<Libro>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -72,11 +74,26 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
             {
 
+            }
+            foreach(Alumno a in alumnos)
+            {
+                if(a.sesion == true)
+                {
+                    a.sesion = false;
+                }
+
+            }
+            using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, alumnos);
+                stream.Close();
             }
             string busqueda = " ";
             vista_busqueda vista3 = new vista_busqueda(busqueda, libros);

@@ -43,6 +43,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     libros = (List<Libro>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -52,6 +53,42 @@ namespace Biblio_app_windows_form
             foreach(Libro l in libros)
             {
                 seleccionar_libro_cbbox.Items.Add(l.Titulos+", "+l.GetAutor()+", "+l.Copias+" copias disponibles");
+            }
+            List<Arriendo> arriendos = null;
+            try
+            {
+                using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            foreach (Arriendo a in arriendos)
+            {
+                if (a.alumno.GetSesion() == true)
+                {
+                    
+                    for (int i = 0; i < a.libro.Count(); i++)
+                    {
+                        this.dataGridView1.Rows.Add();
+                        this.dataGridView1.Rows[i].Cells[0].Value = a.libro[i].Titulos;
+                        this.dataGridView1.Rows[i].Cells[1].Value = a.libro[i].GetAutor();
+                        this.dataGridView1.Rows[i].Cells[2].Value = a.FechaArriendo[i].ToString();
+                        this.dataGridView1.Rows[i].Cells[3].Value = a.FechaArriendo[i].AddDays(7).ToString();
+                        if(DateTime.Now < a.FechaArriendo[i].AddDays(7))
+                        {
+                            this.dataGridView1.Rows[i].Cells[4].Value = "En Plazo";
+                        }
+                        else
+                        {
+                            this.dataGridView1.Rows[i].Cells[4].Value = "Atrasado";
+                        }                    
+                    }
+                }
             }
         }
 
@@ -104,6 +141,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     libros = (List<Libro>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -171,6 +209,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -184,6 +223,7 @@ namespace Biblio_app_windows_form
                 {
                     IFormatter formatter = new BinaryFormatter();
                     arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                    stream.Close();
                 }
             }
             catch (IOException)
@@ -193,6 +233,7 @@ namespace Biblio_app_windows_form
             vista_busqueda vista_Busqueda = new vista_busqueda(busqueda, libros_a_mostrar);
             Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista_Busqueda);
             vista_Busqueda.Show();
+            this.Close();
             //abrir ventana de resultados de busqueda
         }
 
@@ -242,6 +283,20 @@ namespace Biblio_app_windows_form
             {
 
             }
+            foreach (Alumno a in alumnos)
+            {
+                if (a.sesion == true)
+                {
+                    a.sesion = false;
+                }
+
+            }
+            using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, alumnos);
+                stream.Close();
+            }
             string busqueda = " ";
             vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
             Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
@@ -253,7 +308,7 @@ namespace Biblio_app_windows_form
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void renovar_btn_Click(object sender, EventArgs e)

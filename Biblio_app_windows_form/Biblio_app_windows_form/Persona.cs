@@ -14,6 +14,7 @@ namespace Biblio_app_windows_form
         string Rut;
         public string Usuario { get; set; }
         public string Password { get; set; }
+        internal bool sesion { get; set; }
 
         public Persona(string miNombre, string miApellido, string miRut, string miUsuario, string miPassword)
         {
@@ -22,6 +23,7 @@ namespace Biblio_app_windows_form
             Rut = miRut;
             Usuario = miUsuario;
             Password = miPassword;
+            sesion = false;
         }
 
         public string GetUsername()
@@ -31,6 +33,10 @@ namespace Biblio_app_windows_form
         public string GetPassword()
         {
             return Password;
+        }
+        public bool GetSesion()
+        {
+            return sesion;
         }
     }
 }
