@@ -44,7 +44,7 @@ namespace Biblio_app_windows_form
             titulo_txtbox.Text = libro_seleccionado.Titulos;
             copias_txtbox.Text = libro_seleccionado.Copias.ToString();
             autor_txtbox.Text = libro_seleccionado.GetAutor();
-            //calification_bar.Value = libro_seleccionado.GetCalificacion()
+            calification_bar.Value = libro_seleccionado.GetCalificacion();
             comets_richtxtbox.Text = libro_seleccionado.MostrarComentarios();
         }
 
@@ -61,7 +61,7 @@ namespace Biblio_app_windows_form
             {
                 if (filtro == "Titulo")
                 {
-                    if (lib.Titulos == busqueda)
+                    if (lib.Titulos.Contains(busqueda))
                     {
                         libros_a_mostrar_primero.Add(lib);
                     }
@@ -78,17 +78,17 @@ namespace Biblio_app_windows_form
                         libros_a_mostrar_ultimo.Add(lib);
                 }
                 
-                /* // Falta libro.Carrera o libro.Materia
+                // Falta libro.Carrera o libro.Materia
                 if (busqueda == "Carrera")
                 {
-                    if (lib.get == busqueda)
+                    if (lib.GetCarreraAsociada() == busqueda)
                     {
                         libros_a_mostrar_primero.Add(lib);
                     }
                     else
                         libros_a_mostrar_ultimo.Add(lib);
                 }
-                */
+                
             }
             foreach (Libro lib in libros_a_mostrar_primero)
             {
