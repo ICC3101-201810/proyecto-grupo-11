@@ -10,5 +10,6 @@ namespace Biblio_app_windows_form
     {
         public int copia { get; set; }
         public string titulo { get; set; }
+        public string autor { get; set; }
     }
 }

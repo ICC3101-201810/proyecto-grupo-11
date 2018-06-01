@@ -13,6 +13,9 @@ namespace Biblio_app_windows_form
     public partial class vista_busqueda : Form
     {
         List<Libro> libros_a_la_vista = new List<Libro>();
+
+        public event EventHandler<ArrendarLibroEventArgs> OnArrendar;
+
         public vista_busqueda(string mi_busqueda, List<Libro> mi_libros)
         {
             InitializeComponent();
@@ -30,7 +33,15 @@ namespace Biblio_app_windows_form
 
         private void arrendar_btn_Click(object sender, EventArgs e)
         {
-
+            if(OnArrendar != null)
+            {
+                ArrendarLibroEventArgs arriendo = new ArrendarLibroEventArgs();
+                arriendo.titulo = this.titulo_txtbox.Text;
+                arriendo.autor = this.autor_txtbox.Text;
+                arriendo.copia = Convert.ToInt32(this.copias_txtbox.Text);
+                OnArrendar(this, arriendo);
+                MessageBox.Show("Arriendo Exitoso!");
+            }
         }
 
         private void volver_btn_Click(object sender, EventArgs e)

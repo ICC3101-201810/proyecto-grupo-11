@@ -39,6 +39,7 @@ namespace Biblio_app_windows_form
             inicio_sesion i_s = new inicio_sesion();
             List<Alumno> alumnos = null;
             List<Libro> libros = null;
+            List<Arriendo> arriendos = null;
             try
             {
                 using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
@@ -64,7 +65,22 @@ namespace Biblio_app_windows_form
             {
 
             }
-            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros);
+
+            try
+            {
+                using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            string busqueda = " ";
+            vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
+            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
             
             i_s.Show();
             this.Close();

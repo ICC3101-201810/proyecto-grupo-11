@@ -27,12 +27,13 @@ namespace Biblio_app_windows_form
             // verificar inicio de sesion
             // si corresponde a un administrador:
             // esto es algo provisorio:
-            List<Persona> personas = new List<Persona>();
+            
 
             string input_user = username_txtbox.Text;
             string input_password = password_txtbox.Text;
             List<Alumno> alumnos = null;
             List<Libro> libros = null;
+            List<Arriendo> arriendos = null;
             try
             {
                 using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
@@ -58,38 +59,54 @@ namespace Biblio_app_windows_form
             {
 
             }
-            for (int alumno = 0; alumno < personas.Count; alumno++)
+
+            try
             {
-                Persona current = personas[alumno];
-                if(current.GetUsername() == input_user)
+                using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    if(current.GetPassword() != input_password)
+                    IFormatter formatter = new BinaryFormatter();
+                    arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            string busqueda = " ";
+            
+            for (int alumno = 0; alumno < alumnos.Count; alumno++)
+            {
+                
+                if(alumnos[alumno].GetUsername() == input_user)
+                {
+                    if(alumnos[alumno].GetPassword() != input_password)
                     {
-                        Application.Exit();
+                        MessageBox.Show("Nombre de Usuario o Contraseña incorrectos");
                     }
                     else
                     {
-                        string tipo_string = current.GetType().ToString();
+                        /*string tipo_string = alumnos[alumno].GetType().ToString();
                         if (tipo_string == "Administrador")
                         {
                             vista_alumno vista2 = new vista_alumno();
                             vista_administrador vista = new vista_administrador(vista2);
-                            inicio_sesion i_s = new inicio_sesion();                       
-                            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros);
+                            inicio_sesion i_s = new inicio_sesion();
+                            vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
+                            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
                             vista.Show();
                             this.Hide();
-                        }
-                        if (tipo_string == "Alumno")
-                        {
+                        }*/
+                        
 
-                            vista_alumno vista2 = new vista_alumno();
-                            vista_administrador vista = new vista_administrador(vista2);
-                            inicio_sesion i_s = new inicio_sesion();
-                            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros);
-                            vista2.Show();
+                        vista_alumno vista2 = new vista_alumno();
+                        vista_administrador vista = new vista_administrador(vista2);
+                        inicio_sesion i_s = new inicio_sesion();
+                        vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
+                        Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
+                        vista2.Show();
                             
-                            this.Hide();
-                        }
+                        this.Hide();
+                        
 
 
                     }
@@ -102,7 +119,8 @@ namespace Biblio_app_windows_form
                 vista_alumno vista2 = new vista_alumno();
                 vista_administrador vista = new vista_administrador(vista2);
                 inicio_sesion i_s = new inicio_sesion();
-                Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros);
+                vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
+                Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
                 vista2.Show();
                 this.Hide();
             }
@@ -113,7 +131,8 @@ namespace Biblio_app_windows_form
                 vista_alumno vista2 = new vista_alumno();
                 vista_administrador vista = new vista_administrador(vista2);
                 inicio_sesion i_s = new inicio_sesion();
-                Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros);
+                vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
+                Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
                 vista.Show();
                 this.Hide();
             }

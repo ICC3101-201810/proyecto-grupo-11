@@ -9,15 +9,15 @@ namespace Biblio_app_windows_form
     [Serializable]
     public class Arriendo
     {
-        DateTime FechaArriendo;
+        List<DateTime> FechaArriendo;
         Alumno alumno;
-        Libro libro;
+        List<Libro> libro;
 
-        public Arriendo(DateTime MiFechaArriendo, Alumno MiAlumno, Libro MiLibro)
+        public Arriendo(Alumno MiAlumno)
         {
-            FechaArriendo = MiFechaArriendo;
+            FechaArriendo = new List<DateTime>();
             alumno = MiAlumno;
-            libro = MiLibro;
+            libro = new List<Libro>();
         }
     }
 }

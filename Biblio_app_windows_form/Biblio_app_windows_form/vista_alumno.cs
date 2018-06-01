@@ -159,7 +159,39 @@ namespace Biblio_app_windows_form
             {
                 libros_a_mostrar.Add(lib);
             }
+
+            vista_alumno vista2 = new vista_alumno();
+            vista_administrador vista = new vista_administrador(vista2);
+            inicio_sesion i_s = new inicio_sesion();
+            List<Alumno> alumnos = null;
+            List<Arriendo> arriendos = null;
+            try
+            {
+                using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }            
+
+            try
+            {
+                using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
             vista_busqueda vista_Busqueda = new vista_busqueda(busqueda, libros_a_mostrar);
+            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista_Busqueda);
             vista_Busqueda.Show();
             //abrir ventana de resultados de busqueda
         }
@@ -171,6 +203,7 @@ namespace Biblio_app_windows_form
             inicio_sesion i_s = new inicio_sesion();
             List<Alumno> alumnos = null;
             List<Libro> libros = null;
+            List<Arriendo> arriendos = null;
             try
             {
                 using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
@@ -196,7 +229,22 @@ namespace Biblio_app_windows_form
             {
 
             }
-            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros);
+
+            try
+            {
+                using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            string busqueda = " ";
+            vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
+            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
             i_s.abrir_inicio();
             //i_s.Show();
             this.Close();
