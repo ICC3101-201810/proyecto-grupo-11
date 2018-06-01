@@ -56,9 +56,9 @@
             // 
             // buscar_btn
             // 
-            this.buscar_btn.Location = new System.Drawing.Point(480, 79);
+            this.buscar_btn.Location = new System.Drawing.Point(479, 78);
             this.buscar_btn.Name = "buscar_btn";
-            this.buscar_btn.Size = new System.Drawing.Size(75, 23);
+            this.buscar_btn.Size = new System.Drawing.Size(75, 22);
             this.buscar_btn.TabIndex = 0;
             this.buscar_btn.Text = "Buscar";
             this.buscar_btn.UseVisualStyleBackColor = true;

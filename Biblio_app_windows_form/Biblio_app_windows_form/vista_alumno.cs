@@ -63,7 +63,6 @@ namespace Biblio_app_windows_form
 
         private void buscar_btn_Click(object sender, EventArgs e)
         {
-            string busqueda = busqueda_txtbox.Text;
             // Desde aqui es para probar:
             List<Libro> libros = new List<Libro>(); // temporal, después hay que ver como pasarle la lista filtrada
             List<string> palabras = new List<string> { "muy bueno", "espectacular" };
@@ -73,6 +72,7 @@ namespace Biblio_app_windows_form
             // hasta aqui es de prueba
 
             // Se revisan los libros segun el criterio de busqueda:
+            string busqueda = busqueda_txtbox.Text();
             string filtro = filtro_cbbox.Text;
             List<Libro> libros_a_mostrar = new List<Libro>();
             List<Libro> libros_a_mostrar_primero = new List<Libro>();
@@ -80,7 +80,7 @@ namespace Biblio_app_windows_form
 
             foreach (Libro lib in libros)
             {
-                if (lib.Titulos == filtro)
+                if (lib.Titulos == busqueda)
                 {
                     libros_a_mostrar_primero.Add(lib);
                 }
@@ -103,10 +103,7 @@ namespace Biblio_app_windows_form
 
         private void cerrar_sesion_btn_Click(object sender, EventArgs e)
         {
-            vista_administrador vista = new vista_administrador();
-            vista_alumno vista2 = new vista_alumno();
             inicio_sesion i_s = new inicio_sesion();
-            Controller controlador = new Controller(vista, vista2, i_s);
             i_s.Show();
             this.Close();
             //abrir_inicio();

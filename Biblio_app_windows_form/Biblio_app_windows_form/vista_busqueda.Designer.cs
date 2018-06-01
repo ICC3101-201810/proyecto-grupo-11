@@ -41,6 +41,9 @@
             this.titulo_txtbox = new System.Windows.Forms.TextBox();
             this.autor_txtbox = new System.Windows.Forms.TextBox();
             this.agno_txtbox = new System.Windows.Forms.TextBox();
+            this.coments_listbox = new System.Windows.Forms.ListBox();
+            this.buscar_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.portada_imgbox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +59,7 @@
             // 
             this.busqueda_txtbox.Location = new System.Drawing.Point(88, 10);
             this.busqueda_txtbox.Name = "busqueda_txtbox";
-            this.busqueda_txtbox.Size = new System.Drawing.Size(262, 20);
+            this.busqueda_txtbox.Size = new System.Drawing.Size(188, 20);
             this.busqueda_txtbox.TabIndex = 1;
             // 
             // busqueda_lbl
@@ -78,7 +81,7 @@
             // 
             // arrendar_btn
             // 
-            this.arrendar_btn.Location = new System.Drawing.Point(399, 403);
+            this.arrendar_btn.Location = new System.Drawing.Point(399, 408);
             this.arrendar_btn.Name = "arrendar_btn";
             this.arrendar_btn.Size = new System.Drawing.Size(75, 23);
             this.arrendar_btn.TabIndex = 4;
@@ -161,11 +164,42 @@
             this.agno_txtbox.TabIndex = 12;
             this.agno_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // coments_listbox
+            // 
+            this.coments_listbox.FormattingEnabled = true;
+            this.coments_listbox.Location = new System.Drawing.Point(399, 242);
+            this.coments_listbox.Name = "coments_listbox";
+            this.coments_listbox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.coments_listbox.Size = new System.Drawing.Size(389, 160);
+            this.coments_listbox.TabIndex = 13;
+            // 
+            // buscar_btn
+            // 
+            this.buscar_btn.Location = new System.Drawing.Point(282, 8);
+            this.buscar_btn.Name = "buscar_btn";
+            this.buscar_btn.Size = new System.Drawing.Size(68, 23);
+            this.buscar_btn.TabIndex = 14;
+            this.buscar_btn.Text = "Buscar";
+            this.buscar_btn.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(713, 408);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // vista_busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buscar_btn);
+            this.Controls.Add(this.coments_listbox);
             this.Controls.Add(this.agno_txtbox);
             this.Controls.Add(this.autor_txtbox);
             this.Controls.Add(this.titulo_txtbox);
@@ -202,5 +236,8 @@
         private System.Windows.Forms.TextBox titulo_txtbox;
         private System.Windows.Forms.TextBox autor_txtbox;
         private System.Windows.Forms.TextBox agno_txtbox;
+        private System.Windows.Forms.ListBox coments_listbox;
+        private System.Windows.Forms.Button buscar_btn;
+        private System.Windows.Forms.Button button1;
     }
 }
