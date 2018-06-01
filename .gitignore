@@ -20,3 +20,8 @@ Biblio_app_windows_form/Biblio_app_windows_form/obj/Debug/Biblio_app_windows_for
 Biblio_app_windows_form/Biblio_app_windows_form/obj/Debug/Biblio_app_windows_form.exe
 Biblio_app_windows_form/Biblio_app_windows_form/obj/Debug/Biblio_app_windows_form.pdb
 Biblio_app_windows_form/Biblio_app_windows_form/vista_administrador.Designer.cs
+Biblio_app_windows_form/.vs/Biblio_app_windows_form/v15/.suo
+*.ide
+*.exe
+*.pdb
+*.cache

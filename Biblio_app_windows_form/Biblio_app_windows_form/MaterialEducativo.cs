@@ -48,6 +48,11 @@ namespace Biblio_app_windows_form
             return resultado;
         }
 
+        public void AgregarComentario(string comentario)
+        {
+            Comentario.Add(comentario);
+        }
+
         public int GetCalificacion()
         {
             return Calificacion;
@@ -56,6 +61,11 @@ namespace Biblio_app_windows_form
         public string GetCarreraAsociada()
         {
             return CarreraAsociada;
+        }
+
+        public string GetFechaPublicacion()
+        {
+            return FechaCreacion;
         }
     }
 
