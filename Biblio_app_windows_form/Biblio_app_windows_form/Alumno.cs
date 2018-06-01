@@ -31,17 +31,7 @@ namespace Biblio_app_windows_form
             }
         }
 
-        public string Usuario
-        {
-            get
-            {
-                return Usuario;
-            }
-            set
-            {
-                Usuario = value;
-            }
-        }
+        
 
        
     }

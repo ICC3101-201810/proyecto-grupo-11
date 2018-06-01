@@ -47,6 +47,16 @@ namespace Biblio_app_windows_form
 
             return resultado;
         }
+
+        public int GetCalificacion()
+        {
+            return Calificacion;
+        }
+
+        public string GetCarreraAsociada()
+        {
+            return CarreraAsociada;
+        }
     }
 
 }

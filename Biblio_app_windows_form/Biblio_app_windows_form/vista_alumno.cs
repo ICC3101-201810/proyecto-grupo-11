@@ -36,7 +36,23 @@ namespace Biblio_app_windows_form
             tipo_usuario_label.Text = "Alumno";
             nombre_usuario_label.Text = "Prueba";
             filtro_cbbox.Text = "Titulo";
-            
+            List<Libro> libros = null;
+            try
+            {
+                using (Stream stream = new FileStream("Libros.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    libros = (List<Libro>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            foreach(Libro l in libros)
+            {
+                seleccionar_libro_cbbox.Items.Add(l.Titulos+", "+l.GetAutor()+", "+l.Copias+" copias disponibles");
+            }
         }
 
         private void devolver_btn_Click(object sender, EventArgs e)
@@ -63,8 +79,9 @@ namespace Biblio_app_windows_form
 
         private void buscar_btn_Click(object sender, EventArgs e)
         {
+            #region "Prueba"
             // Desde aqui es para probar: Hay 3 libros, en distintas ubicaciones y con distintos comentarios
-            List<Libro> libros = new List<Libro>(); // temporal, después hay que ver como pasarle la lista filtrada
+            /*List<Libro> libros = new List<Libro>(); // temporal, después hay que ver como pasarle la lista filtrada
             List<string> palabras = new List<string> { "muy bueno", "espectacular" };
             Ubicacion tercer_piso = new Ubicacion("norte", 3, 5, 2);
             Libro baldor = new Libro("Ingenieria", 3, "Al Juarismi", "1986", 8, palabras, tercer_piso, "Baldor. Álgebra");
@@ -76,11 +93,26 @@ namespace Biblio_app_windows_form
             List<string> palabras3 = new List<string> { "Buenos ejemplos", "sencillo" };
             Ubicacion primer_piso = new Ubicacion("centro", 1, 2, 2);
             Libro quimica = new Libro("Medicina", 5, "R Chi", "1978", 6, palabras3, primer_piso, "Fundamentos de la Química");
-            libros.Add(quimica);
+            libros.Add(quimica);*/
             // hasta aqui es de prueba
+            #endregion
+
+            List<Libro> libros = null;
+            try
+            {
+                using (Stream stream = new FileStream("Libros.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    libros = (List<Libro>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
 
             // Se revisan los libros segun el criterio de busqueda:
-            
+
             string busqueda = busqueda_txtbox.Text;
             string filtro = filtro_cbbox.Text;
             List<Libro> libros_a_mostrar = new List<Libro>();// Lista completa con todos los libros
@@ -91,7 +123,7 @@ namespace Biblio_app_windows_form
             {
                 if (filtro == "Titulo")
                 {
-                    if (lib.Titulos == busqueda)
+                    if (lib.Titulos.Contains(busqueda))
                     {
                         libros_a_mostrar_primero.Add(lib);
                     }
@@ -107,17 +139,17 @@ namespace Biblio_app_windows_form
                     else
                         libros_a_mostrar_ultimo.Add(lib);
                 }
-                /* // Falta libro.Carrera o libro.Materia
+                // Falta libro.Carrera o libro.Materia
                 if (busqueda == "Carrera")
                 {
-                    if (lib.get == busqueda)
+                    if (lib.GetCarreraAsociada() == busqueda)
                     {
                         libros_a_mostrar_primero.Add(lib);
                     }
                     else
                         libros_a_mostrar_ultimo.Add(lib);
                 }
-                */
+                
             }
             foreach (Libro lib in libros_a_mostrar_primero)
             {
@@ -138,6 +170,7 @@ namespace Biblio_app_windows_form
             vista_administrador vista = new vista_administrador(vista2);
             inicio_sesion i_s = new inicio_sesion();
             List<Alumno> alumnos = null;
+            List<Libro> libros = null;
             try
             {
                 using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
@@ -150,7 +183,20 @@ namespace Biblio_app_windows_form
             {
 
             }
-            Controller controlador = new Controller(vista, vista2, i_s, alumnos);
+
+            try
+            {
+                using (Stream stream = new FileStream("Libros.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    libros = (List<Libro>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+            Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros);
             i_s.abrir_inicio();
             //i_s.Show();
             this.Close();
@@ -177,4 +223,6 @@ namespace Biblio_app_windows_form
             Application.Exit();
         }
     }
+
+
 }
