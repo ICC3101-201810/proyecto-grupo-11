@@ -41,11 +41,11 @@ namespace Biblio_app_windows_form
 
         private void Vista_Alumno_OnDevolver(object sender, DevolverLibroEventArgs e)
         {
-            foreach(Arriendo a in Arriendos)
+            for(int i=0; i < Arriendos.Count; i++)
             {
-                if(a.alumno.sesion == true)
+                if(Arriendos[i].alumno.sesion == true)
                 {
-                    a.libro[e.row].Copia++;
+                    Arriendos[i].libro[e.row].Copia++;
                     foreach(Libro l in Libros)
                     {
                         if(l.Titulos == e.titulo && l.GetAutor() == e.autor)
@@ -54,8 +54,10 @@ namespace Biblio_app_windows_form
                             break;
                         }
                     }
-                    a.libro.RemoveAt(e.row);
-                    a.FechaArriendo.RemoveAt(e.row);
+                    Arriendos[i].libro.RemoveAt(e.row);
+                    Arriendos[i].FechaArriendo.RemoveAt(e.row);
+                    Arriendos[i].alumno.Deudas = 0;
+                    User[i].Deudas = 0;
                     using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
                     {
                         IFormatter formatter = new BinaryFormatter();
@@ -101,6 +103,12 @@ namespace Biblio_app_windows_form
                                 formatter.Serialize(stream, Libros);
                                 stream.Close();
 
+                            }
+                            using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                            {
+                                IFormatter formatter = new BinaryFormatter();
+                                formatter.Serialize(stream, User);
+                                stream.Close();
                             }
                             break;
                         }

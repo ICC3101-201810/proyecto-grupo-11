@@ -39,13 +39,44 @@ namespace Biblio_app_windows_form
         {
             if(OnArrendar != null)
             {
-                
-                ArrendarLibroEventArgs arriendoa = new ArrendarLibroEventArgs();
-                arriendoa.titulo = this.titulo_txtbox.Text;
-                arriendoa.autor = this.autor_txtbox.Text;
-                arriendoa.copia = Convert.ToInt32(this.copias_txtbox.Text);
-                OnArrendar(this, arriendoa);
-                MessageBox.Show("Arriendo Exitoso!");
+                List<Arriendo> arriendos = null;
+                try
+                {
+                    using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        IFormatter formatter = new BinaryFormatter();
+                        arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                        stream.Close();
+                    }
+                }
+                catch (IOException)
+                {
+
+                }
+
+                foreach(Arriendo a in arriendos)
+                {
+                    if(a.alumno.sesion == true)
+                    {
+                        if(a.alumno.Deudas == 0 && copias_txtbox.Text != "0")
+                        {
+                            ArrendarLibroEventArgs arriendoa = new ArrendarLibroEventArgs();
+                            arriendoa.titulo = this.titulo_txtbox.Text;
+                            arriendoa.autor = this.autor_txtbox.Text;
+                            arriendoa.copia = Convert.ToInt32(this.copias_txtbox.Text);
+                            OnArrendar(this, arriendoa);
+                            MessageBox.Show("Arriendo Exitoso!");
+                        }
+                        else if(copias_txtbox.Text == "0")
+                        {
+                            MessageBox.Show("No quedan copias de este libro");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No puede arrendar, tiene una deuda pendiente");
+                        }
+                    }
+                }
             }
         }
 

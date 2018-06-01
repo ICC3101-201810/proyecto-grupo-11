@@ -116,8 +116,8 @@ namespace Biblio_app_windows_form
                     {
                         if (DateTime.Now > a.FechaArriendo[i].AddHours(1))
                         {
-                            debt += Convert.ToInt32((DateTime.Now - a.FechaArriendo[i].AddHours(1)).TotalHours) * 300;
-                            alumnos[i].Deudas += debt;
+                            debt += (Convert.ToInt32((DateTime.Now - a.FechaArriendo[i].AddHours(1)).TotalHours) * 300) + 300;
+                            alumnos[i].Deudas = debt;
                         }
                         else
                         {
@@ -126,16 +126,21 @@ namespace Biblio_app_windows_form
                     }
                 }
             }
-<<<<<<< HEAD
             foreach(Alumno al in alumnos)
             {
                 if(al.sesion == true)
                 {
-                    tipo_usuario_label.Text = al.Nombre + " " + al.Apellido;
+                    tipo_usuario_label.Text = al.Usuario + " " + al.Apellido;
                     nombre_usuario_label.Text = al.Rut;
+                    break;
                 }
             }
-            label5.Text = debt.ToString();
+            if (debt > 0)
+            {
+                devolver_btn.Enabled = false;
+                renovar_btn.Enabled = false;
+            }
+            deuda_txtbox.Text = debt.ToString();
             using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 IFormatter formatter = new BinaryFormatter();
@@ -143,33 +148,77 @@ namespace Biblio_app_windows_form
                 stream.Close();
             }
             
-=======
-            deuda_txtbox.Text = debt.ToString();
-            if (pagar_deuda_chkbox.Checked == true | deuda_txtbox.Text == "0")
-            {
-                devolver_btn.Enabled = true;
-                renovar_btn.Enabled = true;
-            }
-            if (pagar_deuda_chkbox.Checked == false & deuda_txtbox.Text != "0")
-            {
-                devolver_btn.Enabled = false;
-                renovar_btn.Enabled = false;
-            }
->>>>>>> 143dc7cd22e9ec1c610d7484ae6048da12361a54
         }
 
         private void devolver_btn_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.CurrentCell != null)
+            List<Alumno> alumnos = null;
+            try
             {
-                DevolverLibroEventArgs devolucion = new DevolverLibroEventArgs();
-                devolucion.row = dataGridView1.CurrentCell.RowIndex;
-                devolucion.titulo = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
-                devolucion.autor = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
-                OnDevolver(this, devolucion);
-                MessageBox.Show("Libro Devuelto");
-                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                    stream.Close();
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+
+            List<Arriendo> arriendos = null;
+            try
+            {
+                using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                }
+            }
+            catch (IOException)
+            {
+
+            }
+
+            for(int i=0; i < arriendos.Count; i++)
+            {
+                if(arriendos[i].alumno.sesion == true)
+                {
+                    if (dataGridView1.CurrentCell != null && arriendos[i].alumno.Deudas <= Convert.ToInt32(deuda_txtbox.Text))
+                    {
+                        DevolverLibroEventArgs devolucion = new DevolverLibroEventArgs();
+                        devolucion.row = dataGridView1.CurrentCell.RowIndex;
+                        devolucion.titulo = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                        devolucion.autor = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                        OnDevolver(this, devolucion);
+
+                        if(arriendos[i].alumno.Deudas == Convert.ToInt32(deuda_txtbox.Text) && arriendos[i].alumno.Deudas == 0)
+                        {
+                            MessageBox.Show("Libro Devuelto");
+                            
+                        }
+                        else if(arriendos[i].alumno.Deudas == Convert.ToInt32(deuda_txtbox.Text) && arriendos[i].alumno.Deudas != 0)
+                        {
+                            MessageBox.Show("Libro Devuelto y deuda pagada");
+                            
+                        }
+                        else
+                        {
+                            int vuelto = Convert.ToInt32(deuda_txtbox.Text) - arriendos[i].alumno.Deudas;
+                            MessageBox.Show("Libro devuelto y deuda pagada\nSu vuelto es de {0} pesos", vuelto.ToString());
+                            
+                        }
+                        
+                        dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
                 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar un libro a devolver o tiene deudas pendientes");
+                    }
+
+                }
             }
         }
 
@@ -401,9 +450,42 @@ namespace Biblio_app_windows_form
 
         private void renovar_btn_Click(object sender, EventArgs e)
         {
-            if (OnArrendar != null)
+            if (dataGridView1.CurrentCell != null && deuda_txtbox.Text == "0")
             {
-                
+                dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value = DateTime.Now;
+                dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value = DateTime.Now.AddHours(1);
+                List<Arriendo> arriendos = null;
+                try
+                {
+                    using (Stream stream = new FileStream("Arriendos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        IFormatter formatter = new BinaryFormatter();
+                        arriendos = (List<Arriendo>)formatter.Deserialize(stream);
+                    }
+                }
+                catch (IOException)
+                {
+
+                }
+                foreach(Arriendo a in arriendos)
+                {
+                    if(a.alumno.sesion == true)
+                    {
+                        a.FechaArriendo[dataGridView1.CurrentCell.RowIndex] = DateTime.Now;
+                    }
+                }
+                using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(stream, arriendos);
+                    stream.Close();
+
+                }
+                MessageBox.Show("Libro renovado!");
+            }
+            else
+            {
+                MessageBox.Show("No se puede renovar");
             }
         }
         private void salir_btn_Click(object sender, EventArgs e)

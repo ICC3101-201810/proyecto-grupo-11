@@ -124,6 +124,7 @@ namespace Biblio_app_windows_form
             }
             foreach (Alumno a in alumnos)
             {
+                
                 if (a.sesion == true)
                 {
                     a.sesion = false;
