@@ -127,6 +127,7 @@ namespace Biblio_app_windows_form
             autor_txtbox.Text = libro_seleccionado.GetAutor();
             calification_bar.Value = libro_seleccionado.GetCalificacion();
             comets_richtxtbox.Text = libro_seleccionado.MostrarComentarios();
+            agno_txtbox.Text = libro_seleccionado.GetFechaPublicacion();
         }
 
         private void buscar_btn_Click(object sender, EventArgs e)
