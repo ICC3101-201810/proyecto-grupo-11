@@ -37,6 +37,7 @@ namespace Biblio_app_windows_form
             tipo_usuario_label.Text = "Alumno";
             nombre_usuario_label.Text = "Prueba";
             filtro_cbbox.Text = "Titulo";
+            deuda_txtbox.Text = "0";
             List<Libro> libros = null;
             try
             {
@@ -108,7 +109,17 @@ namespace Biblio_app_windows_form
                     }
                 }
             }
-            label5.Text = debt.ToString();
+            deuda_txtbox.Text = debt.ToString();
+            if (pagar_deuda_chkbox.Checked == true | deuda_txtbox.Text == "0")
+            {
+                devolver_btn.Enabled = true;
+                renovar_btn.Enabled = true;
+            }
+            if (pagar_deuda_chkbox.Checked == false & deuda_txtbox.Text != "0")
+            {
+                devolver_btn.Enabled = false;
+                renovar_btn.Enabled = false;
+            }
         }
 
         private void devolver_btn_Click(object sender, EventArgs e)
@@ -122,12 +133,13 @@ namespace Biblio_app_windows_form
                 OnDevolver(this, devolucion);
                 MessageBox.Show("Libro Devuelto");
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                
             }
         }
 
         private void pagar_deuda_chkbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (pagar_deuda_chkbox.Checked == true)
+            if (pagar_deuda_chkbox.Checked == true | deuda_txtbox.Text == "0")
             {
                 devolver_btn.Enabled = true;
                 renovar_btn.Enabled = true;
@@ -138,8 +150,7 @@ namespace Biblio_app_windows_form
                 renovar_btn.Enabled = false;
             }
         }
-
-
+        
         private void buscar_btn_Click(object sender, EventArgs e)
         {
             #region "Prueba"
@@ -362,6 +373,44 @@ namespace Biblio_app_windows_form
         private void salir_btn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dejar_comentario_btn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell != null)
+            {
+                List<Libro> libros = null;
+                try
+                {
+                    using (Stream stream = new FileStream("Libros.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        IFormatter formatter = new BinaryFormatter();
+                        libros = (List<Libro>)formatter.Deserialize(stream);
+                        stream.Close();
+                    }
+                }
+                catch (IOException)
+                {
+
+                }
+                foreach(Libro libro in libros)
+                {
+                    if ((libro.Titulos == dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString()) & (libro.GetAutor() == dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString()))
+                    {
+                        libro.AgregarComentario(comentario_richtextbox.Text);
+                        break;
+                    }
+                }
+                using (Stream stream = new FileStream("Libros.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(stream, libros);
+                    stream.Close();
+
+                }
+            }
+            comentario_richtextbox.Clear();
+            MessageBox.Show("Comentario agregado.");
         }
     }
 
