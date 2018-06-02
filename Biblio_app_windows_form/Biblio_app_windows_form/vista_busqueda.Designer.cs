@@ -32,7 +32,6 @@
             this.resultados_listbox = new System.Windows.Forms.ListBox();
             this.busqueda_txtbox = new System.Windows.Forms.TextBox();
             this.busqueda_lbl = new System.Windows.Forms.Label();
-            this.portada_imgbox = new System.Windows.Forms.PictureBox();
             this.arrendar_btn = new System.Windows.Forms.Button();
             this.titulo_lbl = new System.Windows.Forms.Label();
             this.autor_lbl = new System.Windows.Forms.Label();
@@ -50,6 +49,9 @@
             this.f_bar_lbl = new System.Windows.Forms.Label();
             this.comets_richtxtbox = new System.Windows.Forms.RichTextBox();
             this.comentarios_lbl = new System.Windows.Forms.Label();
+            this.ubicacion_txtbox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.portada_imgbox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.portada_imgbox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,14 +80,6 @@
             this.busqueda_lbl.Size = new System.Drawing.Size(58, 13);
             this.busqueda_lbl.TabIndex = 2;
             this.busqueda_lbl.Text = "Busqueda:";
-            // 
-            // portada_imgbox
-            // 
-            this.portada_imgbox.Location = new System.Drawing.Point(399, 45);
-            this.portada_imgbox.Name = "portada_imgbox";
-            this.portada_imgbox.Size = new System.Drawing.Size(131, 191);
-            this.portada_imgbox.TabIndex = 3;
-            this.portada_imgbox.TabStop = false;
             // 
             // arrendar_btn
             // 
@@ -127,7 +121,7 @@
             // copias_lbl
             // 
             this.copias_lbl.AutoSize = true;
-            this.copias_lbl.Location = new System.Drawing.Point(578, 129);
+            this.copias_lbl.Location = new System.Drawing.Point(578, 159);
             this.copias_lbl.Name = "copias_lbl";
             this.copias_lbl.Size = new System.Drawing.Size(97, 13);
             this.copias_lbl.TabIndex = 8;
@@ -135,7 +129,7 @@
             // 
             // copias_txtbox
             // 
-            this.copias_txtbox.Location = new System.Drawing.Point(681, 126);
+            this.copias_txtbox.Location = new System.Drawing.Point(681, 156);
             this.copias_txtbox.Name = "copias_txtbox";
             this.copias_txtbox.ReadOnly = true;
             this.copias_txtbox.Size = new System.Drawing.Size(20, 20);
@@ -245,11 +239,40 @@
             this.comentarios_lbl.TabIndex = 21;
             this.comentarios_lbl.Text = "Comentarios";
             // 
+            // ubicacion_txtbox
+            // 
+            this.ubicacion_txtbox.Location = new System.Drawing.Point(581, 121);
+            this.ubicacion_txtbox.Name = "ubicacion_txtbox";
+            this.ubicacion_txtbox.ReadOnly = true;
+            this.ubicacion_txtbox.ShortcutsEnabled = false;
+            this.ubicacion_txtbox.Size = new System.Drawing.Size(207, 20);
+            this.ubicacion_txtbox.TabIndex = 23;
+            this.ubicacion_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(521, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Ubicación";
+            // 
+            // portada_imgbox
+            // 
+            this.portada_imgbox.Location = new System.Drawing.Point(399, 45);
+            this.portada_imgbox.Name = "portada_imgbox";
+            this.portada_imgbox.Size = new System.Drawing.Size(116, 191);
+            this.portada_imgbox.TabIndex = 3;
+            this.portada_imgbox.TabStop = false;
+            // 
             // vista_busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ubicacion_txtbox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comentarios_lbl);
             this.Controls.Add(this.comets_richtxtbox);
             this.Controls.Add(this.f_bar_lbl);
@@ -286,7 +309,6 @@
         private System.Windows.Forms.ListBox resultados_listbox;
         private System.Windows.Forms.TextBox busqueda_txtbox;
         private System.Windows.Forms.Label busqueda_lbl;
-        private System.Windows.Forms.PictureBox portada_imgbox;
         private System.Windows.Forms.Button arrendar_btn;
         private System.Windows.Forms.Label titulo_lbl;
         private System.Windows.Forms.Label autor_lbl;
@@ -304,5 +326,8 @@
         private System.Windows.Forms.Label f_bar_lbl;
         private System.Windows.Forms.RichTextBox comets_richtxtbox;
         private System.Windows.Forms.Label comentarios_lbl;
+        private System.Windows.Forms.TextBox ubicacion_txtbox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox portada_imgbox;
     }
 }

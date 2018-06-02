@@ -53,12 +53,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.apellido_txtbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.tipo_alumno_rdiobtn = new System.Windows.Forms.RadioButton();
-            this.tipo_profesor_rdiobtn = new System.Windows.Forms.RadioButton();
-            this.tipo_grpbox = new System.Windows.Forms.GroupBox();
             this.CarreraAsociada_txtBox = new System.Windows.Forms.TextBox();
             this.carrera = new System.Windows.Forms.Label();
-            this.tipo_grpbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // agregar_libro_btn
@@ -264,40 +260,6 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Apellido";
             // 
-            // tipo_alumno_rdiobtn
-            // 
-            this.tipo_alumno_rdiobtn.AutoSize = true;
-            this.tipo_alumno_rdiobtn.Checked = true;
-            this.tipo_alumno_rdiobtn.Location = new System.Drawing.Point(6, 19);
-            this.tipo_alumno_rdiobtn.Name = "tipo_alumno_rdiobtn";
-            this.tipo_alumno_rdiobtn.Size = new System.Drawing.Size(60, 17);
-            this.tipo_alumno_rdiobtn.TabIndex = 26;
-            this.tipo_alumno_rdiobtn.TabStop = true;
-            this.tipo_alumno_rdiobtn.Text = "Alumno";
-            this.tipo_alumno_rdiobtn.UseVisualStyleBackColor = true;
-            // 
-            // tipo_profesor_rdiobtn
-            // 
-            this.tipo_profesor_rdiobtn.AutoSize = true;
-            this.tipo_profesor_rdiobtn.Location = new System.Drawing.Point(94, 19);
-            this.tipo_profesor_rdiobtn.Name = "tipo_profesor_rdiobtn";
-            this.tipo_profesor_rdiobtn.Size = new System.Drawing.Size(64, 17);
-            this.tipo_profesor_rdiobtn.TabIndex = 27;
-            this.tipo_profesor_rdiobtn.TabStop = true;
-            this.tipo_profesor_rdiobtn.Text = "Profesor";
-            this.tipo_profesor_rdiobtn.UseVisualStyleBackColor = true;
-            // 
-            // tipo_grpbox
-            // 
-            this.tipo_grpbox.Controls.Add(this.tipo_alumno_rdiobtn);
-            this.tipo_grpbox.Controls.Add(this.tipo_profesor_rdiobtn);
-            this.tipo_grpbox.Location = new System.Drawing.Point(40, 338);
-            this.tipo_grpbox.Name = "tipo_grpbox";
-            this.tipo_grpbox.Size = new System.Drawing.Size(189, 48);
-            this.tipo_grpbox.TabIndex = 28;
-            this.tipo_grpbox.TabStop = false;
-            this.tipo_grpbox.Text = "Tipo";
-            // 
             // CarreraAsociada_txtBox
             // 
             this.CarreraAsociada_txtBox.Location = new System.Drawing.Point(134, 114);
@@ -323,7 +285,6 @@
             this.ClientSize = new System.Drawing.Size(417, 457);
             this.Controls.Add(this.carrera);
             this.Controls.Add(this.CarreraAsociada_txtBox);
-            this.Controls.Add(this.tipo_grpbox);
             this.Controls.Add(this.apellido_txtbox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -354,8 +315,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biblio app (admin)";
             this.Load += new System.EventHandler(this.vista_administrador_Load);
-            this.tipo_grpbox.ResumeLayout(false);
-            this.tipo_grpbox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,9 +346,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox apellido_txtbox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton tipo_alumno_rdiobtn;
-        private System.Windows.Forms.RadioButton tipo_profesor_rdiobtn;
-        private System.Windows.Forms.GroupBox tipo_grpbox;
         private System.Windows.Forms.TextBox CarreraAsociada_txtBox;
         private System.Windows.Forms.Label carrera;
     }

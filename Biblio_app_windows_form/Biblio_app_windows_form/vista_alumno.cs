@@ -530,6 +530,43 @@ namespace Biblio_app_windows_form
             comentario_richtextbox.Clear();
             MessageBox.Show("Comentario agregado.");
         }
+
+        private void calificar_btn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell != null)
+            {
+                List<Libro> libros = null;
+                try
+                {
+                    using (Stream stream = new FileStream("Libros.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        IFormatter formatter = new BinaryFormatter();
+                        libros = (List<Libro>)formatter.Deserialize(stream);
+                        stream.Close();
+                    }
+                }
+                catch (IOException)
+                {
+
+                }
+                foreach (Libro libro in libros)
+                {
+                    if ((libro.Titulos == dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString()) & (libro.GetAutor() == dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString()))
+                    {
+                        libro.AgregarCalificacion(10 - (calificacin_updown.SelectedIndex%10));
+                        break;
+                    }
+                }
+                using (Stream stream = new FileStream("Libros.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(stream, libros);
+                    stream.Close();
+
+                }
+            }
+            MessageBox.Show("Calificacion agregada.");
+        }
     }
 
 

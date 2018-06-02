@@ -15,6 +15,7 @@ namespace Biblio_app_windows_form
         List<string> Comentario;
         string CarreraAsociada;
         Ubicacion Ubicacion;
+        int numero_calificaciones = 0;
 
         public MaterialEducativo(string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarreraAsociada, Ubicacion MiUbicacion)
         {
@@ -29,6 +30,11 @@ namespace Biblio_app_windows_form
         public Ubicacion GetUbicacion()
         {
             return Ubicacion;
+        }
+
+        public string GetUbicacionString()
+        {
+            return "Sector: " + Ubicacion.Sector + ". Piso: " + Ubicacion.Piso.ToString() + ". Librero: " + Ubicacion.Estante.ToString();
         }
 
         public string GetAutor()
@@ -66,6 +72,12 @@ namespace Biblio_app_windows_form
         public string GetFechaPublicacion()
         {
             return FechaCreacion;
+        }
+
+        public void AgregarCalificacion(int nueva_calificacion)
+        {
+            numero_calificaciones++;
+            Calificacion += nueva_calificacion / numero_calificaciones;
         }
     }
 
