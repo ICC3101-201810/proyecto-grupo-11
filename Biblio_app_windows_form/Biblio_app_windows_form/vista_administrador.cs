@@ -133,13 +133,21 @@ namespace Biblio_app_windows_form
                 AgregarLibroEventArgs libroArgs = new AgregarLibroEventArgs();
                 libroArgs.Titulo = this.titulo_txtbox.Text;
                 libroArgs.Autor = this.autor_txtbox.Text;
-                
-                libroArgs.Copia = Int32.Parse(this.copias_txtbox.Text);
+                int number;
                 libroArgs.CarreraAsociada = this.CarreraAsociada_txtBox.Text;
                 libroArgs.FechaCreacion = this.fecha_pub_txtbox.Text;
-                OnAgregarLibro(this, libroArgs);
-                this.mainForm.ActualizarLibros(this.titulo_txtbox.Text);
-                MessageBox.Show("Libro agregado con éxito!");
+                bool result = Int32.TryParse(this.copias_txtbox.Text,out number);
+                if (result)
+                {
+                    libroArgs.Copia = Int32.Parse(this.copias_txtbox.Text);
+                    OnAgregarLibro(this, libroArgs);
+                    this.mainForm.ActualizarLibros(this.titulo_txtbox.Text);
+                    MessageBox.Show("Libro agregado con éxito!");
+                }
+                else
+                {
+                    MessageBox.Show("Favor ingrese un numero para el campo 'Copias'");
+                }
             }
         }
 

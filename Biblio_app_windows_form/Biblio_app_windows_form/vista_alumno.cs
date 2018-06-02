@@ -34,8 +34,7 @@ namespace Biblio_app_windows_form
         {
             
             InitializeComponent();
-            tipo_usuario_label.Text = "Alumno";
-            nombre_usuario_label.Text = "Prueba";
+            
             filtro_cbbox.Text = "Titulo";
             deuda_txtbox.Text = "0";
             List<Libro> libros = null;
@@ -67,20 +66,35 @@ namespace Biblio_app_windows_form
 
             }
 
+            List<Alumno> alumnos = null;
+            try
+            {
+                using (Stream stream = new FileStream("Alumnos.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    alumnos = (List<Alumno>)formatter.Deserialize(stream);
+                    stream.Close();
+                }
+            }
+            catch (IOException)
+            {
 
+            }
+            
             foreach (Arriendo a in arriendos)
             {
                 if (a.alumno.sesion == true)
                 {
                     
+
                     for (int i = 0; i < a.libro.Count; i++)
                     {
                         this.dataGridView1.Rows.Add();
                         this.dataGridView1.Rows[i].Cells[0].Value = a.libro[i].Titulos;
                         this.dataGridView1.Rows[i].Cells[1].Value = a.libro[i].GetAutor();
                         this.dataGridView1.Rows[i].Cells[2].Value = a.FechaArriendo[i].ToString();
-                        this.dataGridView1.Rows[i].Cells[3].Value = a.FechaArriendo[i].AddSeconds(1).ToString();
-                        if(DateTime.Now < a.FechaArriendo[i].AddSeconds(1))
+                        this.dataGridView1.Rows[i].Cells[3].Value = a.FechaArriendo[i].AddHours(1).ToString();
+                        if(DateTime.Now < a.FechaArriendo[i].AddHours(1))
                         {
                             this.dataGridView1.Rows[i].Cells[4].Value = "En Plazo";
                         }
@@ -94,13 +108,16 @@ namespace Biblio_app_windows_form
             int debt = 0;
             foreach (Arriendo a in arriendos)
             {
+                
                 if (a.alumno.sesion == true)
                 {
+                    
                     for (int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        if (DateTime.Now > a.FechaArriendo[i].AddSeconds(1))
+                        if (DateTime.Now > a.FechaArriendo[i].AddHours(1))
                         {
-                            debt += Convert.ToInt32((DateTime.Now - a.FechaArriendo[i].AddSeconds(1)).TotalSeconds);
+                            debt += Convert.ToInt32((DateTime.Now - a.FechaArriendo[i].AddHours(1)).TotalHours) * 300;
+                            alumnos[i].Deudas += debt;
                         }
                         else
                         {
@@ -109,6 +126,24 @@ namespace Biblio_app_windows_form
                     }
                 }
             }
+<<<<<<< HEAD
+            foreach(Alumno al in alumnos)
+            {
+                if(al.sesion == true)
+                {
+                    tipo_usuario_label.Text = al.Nombre + " " + al.Apellido;
+                    nombre_usuario_label.Text = al.Rut;
+                }
+            }
+            label5.Text = debt.ToString();
+            using (Stream stream = new FileStream("Alumnos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, alumnos);
+                stream.Close();
+            }
+            
+=======
             deuda_txtbox.Text = debt.ToString();
             if (pagar_deuda_chkbox.Checked == true | deuda_txtbox.Text == "0")
             {
@@ -120,6 +155,7 @@ namespace Biblio_app_windows_form
                 devolver_btn.Enabled = false;
                 renovar_btn.Enabled = false;
             }
+>>>>>>> 143dc7cd22e9ec1c610d7484ae6048da12361a54
         }
 
         private void devolver_btn_Click(object sender, EventArgs e)
