@@ -76,6 +76,7 @@ namespace Biblio_app_windows_form
 
             }
             string busqueda = " ";
+            int dec = 0;
             
             for (int alumno = 0; alumno < alumnos.Count; alumno++)
             {
@@ -123,26 +124,16 @@ namespace Biblio_app_windows_form
                         vista2.Show();
                             
                         this.Hide();
-                        
 
+                        dec = 1;
 
                     }
                 }
             }
             
-            if (username_txtbox.Text == "alumno")
-            {
-                
-                vista_alumno vista2 = new vista_alumno();
-                vista_administrador vista = new vista_administrador(vista2);
-                inicio_sesion i_s = new inicio_sesion();
-                vista_busqueda vista3 = new vista_busqueda(busqueda, libros);
-                Controller controlador = new Controller(vista, vista2, i_s, alumnos, libros, arriendos, vista3);
-                vista2.Show();
-                this.Hide();
-            }
+            
 
-            if (username_txtbox.Text == "admin")
+            if (username_txtbox.Text == "admin" && password_txtbox.Text == "admin")
             {
 
                 vista_alumno vista2 = new vista_alumno();
@@ -153,7 +144,11 @@ namespace Biblio_app_windows_form
                 vista.Show();
                 this.Hide();
             }
-
+            
+            else if(dec == 0)
+            {
+                MessageBox.Show("Nombre de Usuario o Contraseña incorrectos");
+            }
 
         }
 
