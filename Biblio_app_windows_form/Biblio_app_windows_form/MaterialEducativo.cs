@@ -11,11 +11,11 @@ namespace Biblio_app_windows_form
     {
         string Autor;
         string FechaCreacion;
-        int Calificacion;
+        float Calificacion;
         List<string> Comentario;
         string CarreraAsociada;
         Ubicacion Ubicacion;
-        int numero_calificaciones = 0;
+        int numero_calificaciones = 1;
 
         public MaterialEducativo(string MiAutor, string MiFechaCreacion, int MiCalificacion, List<string> MiComentario, string MiCarreraAsociada, Ubicacion MiUbicacion)
         {
@@ -59,7 +59,7 @@ namespace Biblio_app_windows_form
             Comentario.Add(comentario);
         }
 
-        public int GetCalificacion()
+        public float GetCalificacion()
         {
             return Calificacion;
         }
@@ -77,7 +77,7 @@ namespace Biblio_app_windows_form
         public void AgregarCalificacion(int nueva_calificacion)
         {
             numero_calificaciones++;
-            Calificacion += nueva_calificacion / numero_calificaciones;
+            Calificacion += nueva_calificacion / (float)numero_calificaciones;
         }
     }
 

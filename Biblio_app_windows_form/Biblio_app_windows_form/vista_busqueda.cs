@@ -139,11 +139,12 @@ namespace Biblio_app_windows_form
 
         private void resultados_listbox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             Libro libro_seleccionado = libros_a_la_vista.ElementAt(resultados_listbox.SelectedIndex);
             titulo_txtbox.Text = libro_seleccionado.Titulos;
             copias_txtbox.Text = libro_seleccionado.Copias.ToString();
             autor_txtbox.Text = libro_seleccionado.GetAutor();
-            calification_bar.Value = libro_seleccionado.GetCalificacion();
+            calification_bar.Value = (int)(libro_seleccionado.GetCalificacion() % 10);
             comets_richtxtbox.Text = libro_seleccionado.MostrarComentarios();
             agno_txtbox.Text = libro_seleccionado.GetFechaPublicacion();
             ubicacion_txtbox.Text = libro_seleccionado.GetUbicacionString();
