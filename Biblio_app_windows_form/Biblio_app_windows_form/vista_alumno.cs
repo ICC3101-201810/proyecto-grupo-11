@@ -34,7 +34,7 @@ namespace Biblio_app_windows_form
         {
             
             InitializeComponent();
-            
+            numericUpDown1.Maximum = 10;
             filtro_cbbox.Text = "Titulo";
             deuda_txtbox.Text = "0";
             List<Libro> libros = null;
@@ -553,7 +553,7 @@ namespace Biblio_app_windows_form
                 {
                     if ((libro.Titulos == dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString()) & (libro.GetAutor() == dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString()))
                     {
-                        libro.AgregarCalificacion(10 - (calificacin_updown.SelectedIndex % 10));
+                        libro.AgregarCalificacion(10 - ((int)numericUpDown1.Value % 10));
                         break;
                     }
                 }
