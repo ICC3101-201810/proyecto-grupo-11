@@ -34,7 +34,10 @@ namespace Biblio_app_windows_form
 
         public string GetUbicacionString()
         {
-            return "Sector: " + Ubicacion.Sector + ". Piso: " + Ubicacion.Piso.ToString() + ". Librero: " + Ubicacion.Estante.ToString();
+            if (Ubicacion != null)
+                return "Sector: " + Ubicacion.Sector + ". Piso: " + Ubicacion.Piso.ToString() + ". Librero: " + Ubicacion.Librero.ToString() + ". Estante: " + Ubicacion.Estante.ToString();
+            else
+                return "";
         }
 
         public string GetAutor()

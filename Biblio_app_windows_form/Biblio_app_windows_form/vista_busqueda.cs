@@ -140,14 +140,18 @@ namespace Biblio_app_windows_form
         private void resultados_listbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            Libro libro_seleccionado = libros_a_la_vista.ElementAt(resultados_listbox.SelectedIndex);
-            titulo_txtbox.Text = libro_seleccionado.Titulos;
-            copias_txtbox.Text = libro_seleccionado.Copias.ToString();
-            autor_txtbox.Text = libro_seleccionado.GetAutor();
-            calification_bar.Value = (int)(libro_seleccionado.GetCalificacion() % 10);
-            comets_richtxtbox.Text = libro_seleccionado.MostrarComentarios();
-            agno_txtbox.Text = libro_seleccionado.GetFechaPublicacion();
-            ubicacion_txtbox.Text = libro_seleccionado.GetUbicacionString();
+            if (resultados_listbox.SelectedIndex < libros_a_la_vista.Count && resultados_listbox.SelectedIndex >= 0)
+            {
+                Libro libro_seleccionado = libros_a_la_vista.ElementAt(resultados_listbox.SelectedIndex);
+                titulo_txtbox.Text = libro_seleccionado.Titulos;
+                copias_txtbox.Text = libro_seleccionado.Copias.ToString();
+                autor_txtbox.Text = libro_seleccionado.GetAutor();
+                calification_bar.Value = (int)(libro_seleccionado.GetCalificacion() % 10);
+                comets_richtxtbox.Text = libro_seleccionado.MostrarComentarios();
+                agno_txtbox.Text = libro_seleccionado.GetFechaPublicacion();
+                ubicacion_txtbox.Text = libro_seleccionado.GetUbicacionString();
+            }
+
         }
 
         private void buscar_btn_Click(object sender, EventArgs e)
@@ -172,7 +176,7 @@ namespace Biblio_app_windows_form
                 }
                 if (filtro == "Autor")
                 {
-                    if (lib.GetAutor() == busqueda)
+                    if (lib.GetAutor().Contains(busqueda))
                     {
                         libros_a_mostrar_primero.Add(lib);
                     }
@@ -183,7 +187,7 @@ namespace Biblio_app_windows_form
                 // Falta libro.Carrera o libro.Materia
                 if (busqueda == "Carrera")
                 {
-                    if (lib.GetCarreraAsociada() == busqueda)
+                    if (lib.GetCarreraAsociada().Contains(busqueda))
                     {
                         libros_a_mostrar_primero.Add(lib);
                     }

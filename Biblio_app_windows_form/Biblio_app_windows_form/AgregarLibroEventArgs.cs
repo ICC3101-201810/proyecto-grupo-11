@@ -13,5 +13,9 @@ namespace Biblio_app_windows_form
         public int Copia { get; set; }
         public string CarreraAsociada { get; set; }
         public string FechaCreacion { get; set; }
+        public int piso { get; set; }
+        public string zona { get; set; }
+        public int librero { get; set; }
+        public int estante { get; set; }
     }
 }

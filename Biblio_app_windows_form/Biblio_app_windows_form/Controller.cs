@@ -87,9 +87,10 @@ namespace Biblio_app_windows_form
                     {
                         if(User[i].sesion == true && User[i].Deudas == 0)
                         {
+                            l.Copia--;
                             Arriendos[i].libro.Add(l);
                             Arriendos[i].FechaArriendo.Add(DateTime.Now);
-                            l.Copia--;
+                            
                             using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
                             {
                                 IFormatter formatter = new BinaryFormatter();
@@ -126,7 +127,8 @@ namespace Biblio_app_windows_form
 
         private void Vista_Administrador_OnAgregarLibro(object sender, AgregarLibroEventArgs e)
         {
-            Libro libro = new Libro(e.CarreraAsociada, e.Copia, e.Autor, e.FechaCreacion, 0, new List<string>(), null, e.Titulo);
+            Ubicacion ubicacion = new Ubicacion(e.zona, e.piso, e.librero, e.estante);
+            Libro libro = new Libro(e.CarreraAsociada, e.Copia, e.Autor, e.FechaCreacion, 0, new List<string>(), ubicacion, e.Titulo);
             Libros.Add(libro);
             using (Stream stream = new FileStream("Libros.bin", FileMode.Create, FileAccess.Write, FileShare.None))
             {

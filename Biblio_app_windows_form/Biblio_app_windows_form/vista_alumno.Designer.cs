@@ -61,7 +61,7 @@
             // buscar_btn
             // 
             this.buscar_btn.Location = new System.Drawing.Point(639, 96);
-            this.buscar_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buscar_btn.Margin = new System.Windows.Forms.Padding(4);
             this.buscar_btn.Name = "buscar_btn";
             this.buscar_btn.Size = new System.Drawing.Size(100, 27);
             this.buscar_btn.TabIndex = 0;
@@ -82,7 +82,7 @@
             // busqueda_txtbox
             // 
             this.busqueda_txtbox.Location = new System.Drawing.Point(291, 97);
-            this.busqueda_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.busqueda_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.busqueda_txtbox.Name = "busqueda_txtbox";
             this.busqueda_txtbox.Size = new System.Drawing.Size(340, 22);
             this.busqueda_txtbox.TabIndex = 2;
@@ -93,10 +93,9 @@
             this.filtro_cbbox.Items.AddRange(new object[] {
             "Titulo",
             "Autor",
-            "Id",
             "Carrera"});
             this.filtro_cbbox.Location = new System.Drawing.Point(121, 97);
-            this.filtro_cbbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filtro_cbbox.Margin = new System.Windows.Forms.Padding(4);
             this.filtro_cbbox.Name = "filtro_cbbox";
             this.filtro_cbbox.Size = new System.Drawing.Size(160, 24);
             this.filtro_cbbox.TabIndex = 3;
@@ -113,7 +112,7 @@
             this.fecha_dev,
             this.aviso_estado});
             this.dataGridView1.Location = new System.Drawing.Point(15, 167);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(725, 234);
@@ -163,7 +162,7 @@
             // devolver_btn
             // 
             this.devolver_btn.Location = new System.Drawing.Point(471, 409);
-            this.devolver_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.devolver_btn.Margin = new System.Windows.Forms.Padding(4);
             this.devolver_btn.Name = "devolver_btn";
             this.devolver_btn.Size = new System.Drawing.Size(100, 28);
             this.devolver_btn.TabIndex = 8;
@@ -184,16 +183,15 @@
             // deuda_txtbox
             // 
             this.deuda_txtbox.Location = new System.Drawing.Point(128, 409);
-            this.deuda_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deuda_txtbox.Margin = new System.Windows.Forms.Padding(4);
             this.deuda_txtbox.Name = "deuda_txtbox";
-            this.deuda_txtbox.ReadOnly = true;
             this.deuda_txtbox.Size = new System.Drawing.Size(209, 22);
             this.deuda_txtbox.TabIndex = 10;
             // 
             // renovar_btn
             // 
             this.renovar_btn.Location = new System.Drawing.Point(579, 409);
-            this.renovar_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.renovar_btn.Margin = new System.Windows.Forms.Padding(4);
             this.renovar_btn.Name = "renovar_btn";
             this.renovar_btn.Size = new System.Drawing.Size(100, 28);
             this.renovar_btn.TabIndex = 12;
@@ -205,7 +203,7 @@
             // 
             this.pagar_deuda_chkbox.AutoSize = true;
             this.pagar_deuda_chkbox.Location = new System.Drawing.Point(347, 411);
-            this.pagar_deuda_chkbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pagar_deuda_chkbox.Margin = new System.Windows.Forms.Padding(4);
             this.pagar_deuda_chkbox.Name = "pagar_deuda_chkbox";
             this.pagar_deuda_chkbox.Size = new System.Drawing.Size(112, 21);
             this.pagar_deuda_chkbox.TabIndex = 13;
@@ -216,7 +214,7 @@
             // salir_btn
             // 
             this.salir_btn.Location = new System.Drawing.Point(603, 537);
-            this.salir_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.salir_btn.Margin = new System.Windows.Forms.Padding(4);
             this.salir_btn.Name = "salir_btn";
             this.salir_btn.Size = new System.Drawing.Size(117, 28);
             this.salir_btn.TabIndex = 14;
@@ -227,7 +225,7 @@
             // cerrar_sesion_btn
             // 
             this.cerrar_sesion_btn.Location = new System.Drawing.Point(603, 474);
-            this.cerrar_sesion_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cerrar_sesion_btn.Margin = new System.Windows.Forms.Padding(4);
             this.cerrar_sesion_btn.Name = "cerrar_sesion_btn";
             this.cerrar_sesion_btn.Size = new System.Drawing.Size(116, 28);
             this.cerrar_sesion_btn.TabIndex = 15;
@@ -258,7 +256,7 @@
             // comentario_richtextbox
             // 
             this.comentario_richtextbox.Location = new System.Drawing.Point(19, 444);
-            this.comentario_richtextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comentario_richtextbox.Margin = new System.Windows.Forms.Padding(4);
             this.comentario_richtextbox.Name = "comentario_richtextbox";
             this.comentario_richtextbox.Size = new System.Drawing.Size(548, 159);
             this.comentario_richtextbox.TabIndex = 19;
@@ -267,7 +265,7 @@
             // dejar_comentario_btn
             // 
             this.dejar_comentario_btn.Location = new System.Drawing.Point(436, 612);
-            this.dejar_comentario_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dejar_comentario_btn.Margin = new System.Windows.Forms.Padding(4);
             this.dejar_comentario_btn.Name = "dejar_comentario_btn";
             this.dejar_comentario_btn.Size = new System.Drawing.Size(135, 28);
             this.dejar_comentario_btn.TabIndex = 20;
@@ -288,7 +286,7 @@
             // calificar_btn
             // 
             this.calificar_btn.Location = new System.Drawing.Point(296, 612);
-            this.calificar_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.calificar_btn.Margin = new System.Windows.Forms.Padding(4);
             this.calificar_btn.Name = "calificar_btn";
             this.calificar_btn.Size = new System.Drawing.Size(135, 28);
             this.calificar_btn.TabIndex = 23;
@@ -331,7 +329,7 @@
             this.Controls.Add(this.buscar_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "vista_alumno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biblio App";

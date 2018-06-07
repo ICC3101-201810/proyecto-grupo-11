@@ -118,6 +118,7 @@ namespace Biblio_app_windows_form
                         {
                             debt += (Convert.ToInt32((DateTime.Now - a.FechaArriendo[i].AddHours(1)).TotalHours) * 300) + 300;
                             alumnos[i].Deudas = debt;
+                            a.alumno.Deudas = debt;
                         }
                         else
                         {
@@ -147,7 +148,14 @@ namespace Biblio_app_windows_form
                 formatter.Serialize(stream, alumnos);
                 stream.Close();
             }
-            
+            using (Stream stream = new FileStream("Arriendos.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(stream, arriendos);
+                stream.Close();
+
+            }
+
         }
 
         private void devolver_btn_Click(object sender, EventArgs e)
@@ -294,7 +302,7 @@ namespace Biblio_app_windows_form
                 }
                 if (filtro == "Autor")
                 {
-                    if (lib.GetAutor() == busqueda)
+                    if (lib.GetAutor().Contains(busqueda))
                     {
                         libros_a_mostrar_primero.Add(lib);
                     }
@@ -302,9 +310,9 @@ namespace Biblio_app_windows_form
                         libros_a_mostrar_ultimo.Add(lib);
                 }
                 // Falta libro.Carrera o libro.Materia
-                if (busqueda == "Carrera")
+                if (filtro == "Carrera")
                 {
-                    if (lib.GetCarreraAsociada() == busqueda)
+                    if (lib.GetCarreraAsociada().Contains(busqueda))
                     {
                         libros_a_mostrar_primero.Add(lib);
                     }
